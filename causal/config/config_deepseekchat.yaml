@@ -5,7 +5,7 @@
 #     openai: Null
 #     anthropic: Null
 #   api_keys:
-#     openrouter: "sk-75a073ab4cd9498ba8f0406af30771c1"
+#     openrouter: ""
 #     openai: ""
 #     anthropic: ""
 #   temperature: 0.7
@@ -22,7 +22,7 @@ llm:
   models:
     deepseek: "deepseek-chat"       
   api_keys:
-    deepseek: "sk-75a073ab4cd9498ba8f0406af30771c1"
+    deepseek: ""
   temperature: 0.6
 
 benchmark:

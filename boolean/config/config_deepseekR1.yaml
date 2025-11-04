@@ -23,7 +23,7 @@ llm:
     deepseek: "deepseek-reasoner"
   temperature: 0.7
   api_keys:
-    deepseek: "sk-4b2892631a1b479b8be823381584d883"
+    deepseek: ""
 
 benchmark:
   checkpoint: "checkpoints"

@@ -6,7 +6,7 @@ llm:
     openai: Null
     anthropic: Null
   api_keys:
-    openrouter: "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"
+    openrouter: ""
     openai: ""
     anthropic: ""
   temperature: 0.7

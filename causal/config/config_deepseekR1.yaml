@@ -1,0 +1,31 @@
+# llm:
+#   type: openrouter
+#   models:
+#     openrouter: "openai/gpt-4o"
+#     openai: Null
+#     anthropic: Null
+#   api_keys:
+#     openrouter: "sk-75a073ab4cd9498ba8f0406af30771c1"
+#     openai: ""
+#     anthropic: ""
+#   temperature: 0.7
+
+# benchmark:
+#   checkpoint: "checkpoints"
+#   verbose: true
+#   output_pattern: "results/{dataset_name}_{model}.json"
+
+
+
+llm:
+  type: deepseek
+  models:
+    deepseek: "deepseek-reasoner"       
+  api_keys:
+    deepseek: "sk-75a073ab4cd9498ba8f0406af30771c1"
+  temperature: 0.5
+
+benchmark:
+  checkpoint: "checkpoints"
+  verbose: true
+  output_pattern: "results/{dataset_name}_{model}.json"

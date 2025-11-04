@@ -1,0 +1,1600 @@
+{
+  "run_id": "20251104_173255",
+  "llm_name": "DeepSeek(deepseek-chat)",
+  "teacher_llm_name": "DeepSeek(deepseek-chat)",
+  "mode": "teacher_student",
+  "n_samples": 30,
+  "n_queries_per_sample": null,
+  "query_multiplier": 1.0,
+  "query_mode": "adaptive_1.0x",
+  "seed": 33550336,
+  "timestamp": "2025-11-04T17:41:11.775009",
+  "statistics": {
+    "parse_success_rate": {
+      "mean": 1.0,
+      "std": 0.0,
+      "var": 0.0,
+      "min": 1.0,
+      "max": 1.0,
+      "p_value": 0.0
+    },
+    "valid_rate": {
+      "mean": 0.8,
+      "std": 0.3785938897200183,
+      "var": 0.14333333333333337,
+      "min": 0.0,
+      "max": 1.0,
+      "p_value": 3.255391590861681e-12
+    },
+    "novelty_rate": {
+      "mean": 0.6555555555555554,
+      "std": 0.37989602216175017,
+      "var": 0.14432098765432097,
+      "min": 0.0,
+      "max": 1.0,
+      "p_value": 3.392526053978305e-10
+    },
+    "recovery_rate": {
+      "mean": 0.6555555555555554,
+      "std": 0.37989602216175017,
+      "var": 0.14432098765432097,
+      "min": 0.0,
+      "max": 1.0,
+      "p_value": 3.392526053978305e-10
+    }
+  },
+  "token_usage": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0,
+    "avg_tokens_per_sample": 0.0,
+    "avg_tokens_per_query": 0.0
+  },
+  "cost": {
+    "total_cost": 0.0,
+    "avg_cost_per_sample": 0.0,
+    "avg_cost_per_query": 0.0
+  },
+  "error_summary": {
+    "total_errors": 0,
+    "error_types": {},
+    "error_rate": 0.0
+  },
+  "per_sample_results": [
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Expression: NOT x AND y",
+          "teacher_feedback": "Let’s check the student’s expression `NOT x AND y` against each observation.  \n\n**Observation 1:** x=0, y=1  \nNOT 0 = 1 → 1 AND 1 = 1 ✅ matches output 1  \n\n**Observation 2:** x=1, y=0  \nNOT 1 = 0 → 0 AND 0 = 0 ✅ matches output 0  \n\n**Observation 3:** x=1, y=1  \nNOT 1 = 0 → 0 AND 1 = 0 ✅ matches output 0  \n\nAll observations match the expression’s output.  \n\n**Conclusion:** The expression `NOT x AND y` is correct for the given data. No changes needed.",
+          "student_refined": "Expression: NOT x AND y"
+        }
+      ],
+      "observation_set_id": "n3_inputs_01_10_11_outputs_100",
+      "n_observations": 3,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 0,
+      "n_recovered_gts": 0,
+      "parse_success_count": 1,
+      "parse_success_rate": 1.0,
+      "in_space_rate": 0.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        "NOT x AND y"
+      ],
+      "valid_hypotheses": [],
+      "unique_valid_expressions": [],
+      "unique_all_expressions": []
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Expression: x AND y",
+          "teacher_feedback": "Let’s check the student’s expression `x AND y` against the observations:\n\n1. **x=1, y=0** → `1 AND 0` = **0** → matches observed output 0 ✅  \n2. **x=1, y=1** → `1 AND 1` = **1** → matches observed output 1 ✅  \n\nBoth observations match the expression’s outputs exactly.  \n\n**Conclusion:** The expression `x AND y` is correct for the given data. No changes are needed.",
+          "student_refined": "Expression: x AND y"
+        },
+        {
+          "query_index": 1,
+          "student_initial": "Expression: x AND y",
+          "teacher_feedback": "Let’s check the student’s expression **x AND y** against the observations:\n\n1. **x = 1, y = 0** → x AND y = 1 AND 0 = 0 → matches observed output 0 ✅  \n2. **x = 1, y = 1** → x AND y = 1 AND 1 = 1 → matches observed output 1 ✅  \n\nBoth observations match the expression’s output exactly.  \n\n**Conclusion:** The expression **x AND y** is correct for the given data. No changes are needed.",
+          "student_refined": "Expression: x AND y"
+        }
+      ],
+      "observation_set_id": "n2_inputs_10_11_outputs_01",
+      "n_observations": 2,
+      "n_ground_truths": 2,
+      "n_queries": 2,
+      "n_valid": 2,
+      "n_unique_valid": 1,
+      "n_unique_all": 1,
+      "n_recovered_gts": 1,
+      "parse_success_count": 2,
+      "parse_success_rate": 1.0,
+      "in_space_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 0.5,
+      "recovery_rate": 0.5,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        "x AND y",
+        "x AND y"
+      ],
+      "valid_hypotheses": [
+        "x AND y",
+        "x AND y"
+      ],
+      "unique_valid_expressions": [
+        "x AND y"
+      ],
+      "unique_all_expressions": [
+        "x AND y"
+      ]
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Expression: x AND NOT y",
+          "teacher_feedback": "Let’s test the student’s expression **x AND NOT y** against the observations:\n\n1. **x=0, y=1**  \n   NOT y = 0  \n   x AND 0 = 0 → matches observed output 0 ✅\n\n2. **x=1, y=0**  \n   NOT y = 1  \n   x AND 1 = 1 → matches observed output 1 ✅\n\n3. **x=1, y=1**  \n   NOT y = 0  \n   x AND 0 = 0 → matches observed output 0 ✅\n\nAll observations match the expression exactly.  \n\n**Conclusion:**  \nThe expression **x AND NOT y** is correct for the given data. No edits are needed.",
+          "student_refined": "Expression: x AND NOT y"
+        }
+      ],
+      "observation_set_id": "n3_inputs_01_10_11_outputs_010",
+      "n_observations": 3,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 0,
+      "n_recovered_gts": 0,
+      "parse_success_count": 1,
+      "parse_success_rate": 1.0,
+      "in_space_rate": 0.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        "x AND NOT y"
+      ],
+      "valid_hypotheses": [],
+      "unique_valid_expressions": [],
+      "unique_all_expressions": []
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Expression: x OR y",
+          "teacher_feedback": "Let’s check the student’s expression **x OR y** against the observations:\n\n1. **x=0, y=0** → 0 OR 0 = 0 ✅ matches output 0  \n2. **x=0, y=1** → 0 OR 1 = 1 ✅ matches output 1  \n3. **x=1, y=0** → 1 OR 0 = 1 ✅ matches output 1  \n\nAll given observations match the expression **x OR y**.  \nNo inconsistencies found.  \n\n**Feedback:**  \nYour expression **x OR y** correctly matches all given observations. It is valid and already the simplest form. Well done.",
+          "student_refined": "Expression: x OR y"
+        }
+      ],
+      "observation_set_id": "n3_inputs_00_01_10_outputs_011",
+      "n_observations": 3,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 1,
+      "n_unique_valid": 1,
+      "n_unique_all": 1,
+      "n_recovered_gts": 1,
+      "parse_success_count": 1,
+      "parse_success_rate": 1.0,
+      "in_space_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 1.0,
+      "recovery_rate": 1.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        "x OR y"
+      ],
+      "valid_hypotheses": [
+        "x OR y"
+      ],
+      "unique_valid_expressions": [
+        "x OR y"
+      ],
+      "unique_all_expressions": [
+        "x OR y"
+      ]
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Expression: x",
+          "teacher_feedback": "Let’s check the student’s expression `x` against the observations:\n\n- **x=0, y=0** → output = 0 → matches observed 0 ✅  \n- **x=0, y=1** → output = 0 → matches observed 0 ✅  \n- **x=1, y=0** → output = 1 → matches observed 1 ✅  \n- **x=1, y=1** → output = 1 → matches observed 1 ✅  \n\nAll outputs match exactly.  \nThe expression `x` is correct and is the simplest possible form for this truth table.\n\n**Feedback:**  \n✅ Your expression `x` correctly matches all given observations. It is already minimal and valid — no changes needed.",
+          "student_refined": "Expression: x"
+        }
+      ],
+      "observation_set_id": "n4_inputs_00_01_10_11_outputs_0011",
+      "n_observations": 4,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 1,
+      "n_unique_valid": 1,
+      "n_unique_all": 1,
+      "n_recovered_gts": 1,
+      "parse_success_count": 1,
+      "parse_success_rate": 1.0,
+      "in_space_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 1.0,
+      "recovery_rate": 1.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        "x"
+      ],
+      "valid_hypotheses": [
+        "x"
+      ],
+      "unique_valid_expressions": [
+        "x"
+      ],
+      "unique_all_expressions": [
+        "x"
+      ]
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Expression: NOT x",
+          "teacher_feedback": "Let’s check the student’s expression **NOT x** against the observations:\n\n1. **x=0, y=0** → NOT 0 = 1 ✅ matches observed output 1  \n2. **x=1, y=0** → NOT 1 = 0 ✅ matches observed output 0  \n\nThe expression **NOT x** produces the correct output for both given cases.  \nSince **y** is not used in the observations, it’s fine that the expression ignores it.\n\n**Conclusion:** The student’s expression is correct and consistent with the given observations. No change is needed.\n\n**Feedback:**  \n✅ Your expression `NOT x` correctly matches all given observations. Well done.",
+          "student_refined": "Expression: NOT x"
+        }
+      ],
+      "observation_set_id": "n2_inputs_00_10_outputs_10",
+      "n_observations": 2,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 1,
+      "n_unique_valid": 1,
+      "n_unique_all": 1,
+      "n_recovered_gts": 1,
+      "parse_success_count": 1,
+      "parse_success_rate": 1.0,
+      "in_space_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 1.0,
+      "recovery_rate": 1.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        "NOT x"
+      ],
+      "valid_hypotheses": [
+        "NOT x"
+      ],
+      "unique_valid_expressions": [
+        "NOT x"
+      ],
+      "unique_all_expressions": [
+        "NOT x"
+      ]
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Expression: x AND y",
+          "teacher_feedback": "Let's test the student's expression **x AND y** with each observation:\n\n1. **x=0, y=0** → 0 AND 0 = 0 ✅ matches observed output 0  \n2. **x=1, y=0** → 1 AND 0 = 0 ✅ matches observed output 0  \n3. **x=1, y=1** → 1 AND 1 = 1 ✅ matches observed output 1  \n\nAll outputs match exactly.  \n\n**Conclusion:**  \nThe expression **x AND y** is correct and consistent with all given observations. No changes are needed.",
+          "student_refined": "Expression: x AND y"
+        },
+        {
+          "query_index": 1,
+          "student_initial": "Expression: x AND y",
+          "teacher_feedback": "Let’s check the student’s expression **x AND y** against each observation:  \n\n1. **x=0, y=0** → 0 AND 0 = 0 ✅ matches output 0  \n2. **x=1, y=0** → 1 AND 0 = 0 ✅ matches output 0  \n3. **x=1, y=1** → 1 AND 1 = 1 ✅ matches output 1  \n\nAll outputs match the given observations exactly.  \n\n**Conclusion:** The expression **x AND y** is correct for this set of observations. No changes are needed.",
+          "student_refined": "Expression: x AND y"
+        }
+      ],
+      "observation_set_id": "n3_inputs_00_10_11_outputs_001",
+      "n_observations": 3,
+      "n_ground_truths": 2,
+      "n_queries": 2,
+      "n_valid": 2,
+      "n_unique_valid": 1,
+      "n_unique_all": 1,
+      "n_recovered_gts": 1,
+      "parse_success_count": 2,
+      "parse_success_rate": 1.0,
+      "in_space_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 0.5,
+      "recovery_rate": 0.5,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        "x AND y",
+        "x AND y"
+      ],
+      "valid_hypotheses": [
+        "x AND y",
+        "x AND y"
+      ],
+      "unique_valid_expressions": [
+        "x AND y"
+      ],
+      "unique_all_expressions": [
+        "x AND y"
+      ]
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Expression: x AND y",
+          "teacher_feedback": "Let’s check the student’s expression **x AND y** against each observation:\n\n- **x=0, y=0** → 0 AND 0 = 0 ✅ matches output 0  \n- **x=0, y=1** → 0 AND 1 = 0 ✅ matches output 0  \n- **x=1, y=0** → 1 AND 0 = 0 ✅ matches output 0  \n- **x=1, y=1** → 1 AND 1 = 1 ✅ matches output 1  \n\nAll outputs match exactly.  \n\n**Conclusion:** The expression **x AND y** is correct for the given truth table. No edits are needed.",
+          "student_refined": "Expression: x AND y"
+        }
+      ],
+      "observation_set_id": "n4_inputs_00_01_10_11_outputs_0001",
+      "n_observations": 4,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 1,
+      "n_unique_valid": 1,
+      "n_unique_all": 1,
+      "n_recovered_gts": 1,
+      "parse_success_count": 1,
+      "parse_success_rate": 1.0,
+      "in_space_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 1.0,
+      "recovery_rate": 1.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        "x AND y"
+      ],
+      "valid_hypotheses": [
+        "x AND y"
+      ],
+      "unique_valid_expressions": [
+        "x AND y"
+      ],
+      "unique_all_expressions": [
+        "x AND y"
+      ]
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Expression: x AND y",
+          "teacher_feedback": "Let’s check the student’s expression **x AND y** against the given observation:\n\n- Input: \\( x = 1, y = 0 \\)  \n- Expression: \\( 1 \\ \\text{AND} \\ 0 = 0 \\)  \n- Observed output: \\( 0 \\) ✅\n\nThe expression matches the observation exactly.  \nSince there’s only one observation, and it matches, the expression is consistent with the data.\n\n**Feedback:**  \nYour expression `x AND y` correctly produces the output `0` for the given input. With only one data point, it is consistent.",
+          "student_refined": "Expression: x AND y"
+        },
+        {
+          "query_index": 1,
+          "student_initial": "Expression: x AND y",
+          "teacher_feedback": "Let's test the student's expression with the given observation:\n\n**Observation:**  \nx = 1, y = 0 → output = 0  \n\n**Expression:** x AND y  \n1 AND 0 = 0  \n\nThe computed output (0) matches the observed output (0).  \n\nSince there is only one observation and the expression matches it, there is no inconsistency.  \n\n**Conclusion:**  \n✅ The expression `x AND y` is consistent with the given observation.",
+          "student_refined": "Expression: x AND y"
+        },
+        {
+          "query_index": 2,
+          "student_initial": "Expression: x AND y",
+          "teacher_feedback": "Let's test the student's expression against the observation.\n\n**Observation:**  \nx = 1, y = 0  \nExpected output = 0  \n\n**Expression:** x AND y  \n1 AND 0 = 0 ✅ matches the expected output.\n\nSince there is only one observation and the expression matches it, the expression is **consistent** with the given data.\n\n**Conclusion:**  \nThe expression `x AND y` correctly explains the observation. No changes are needed based on the single data point.",
+          "student_refined": "Expression: x AND y"
+        }
+      ],
+      "observation_set_id": "n1_inputs_10_outputs_0",
+      "n_observations": 1,
+      "n_ground_truths": 3,
+      "n_queries": 3,
+      "n_valid": 3,
+      "n_unique_valid": 1,
+      "n_unique_all": 1,
+      "n_recovered_gts": 1,
+      "parse_success_count": 3,
+      "parse_success_rate": 1.0,
+      "in_space_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 0.3333333333333333,
+      "recovery_rate": 0.3333333333333333,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        "x AND y",
+        "x AND y",
+        "x AND y"
+      ],
+      "valid_hypotheses": [
+        "x AND y",
+        "x AND y",
+        "x AND y"
+      ],
+      "unique_valid_expressions": [
+        "x AND y"
+      ],
+      "unique_all_expressions": [
+        "x AND y"
+      ]
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Expression: NOT y",
+          "teacher_feedback": "Let’s check the student’s expression **NOT y** against the observations:\n\n1. **x=0, y=0** → NOT y = NOT 0 = 1 ✅ matches output 1  \n2. **x=0, y=1** → NOT y = NOT 1 = 0 ✅ matches output 0  \n3. **x=1, y=0** → NOT y = NOT 0 = 1 ✅ matches output 1  \n\nAll outputs match the given observations exactly.  \nThe expression is already correct and minimal — no need to change it.\n\n**Feedback:**  \nYour expression `NOT y` correctly matches all observations. Well done.",
+          "student_refined": "Expression: NOT y"
+        }
+      ],
+      "observation_set_id": "n3_inputs_00_01_10_outputs_101",
+      "n_observations": 3,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 1,
+      "n_unique_valid": 1,
+      "n_unique_all": 1,
+      "n_recovered_gts": 1,
+      "parse_success_count": 1,
+      "parse_success_rate": 1.0,
+      "in_space_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 1.0,
+      "recovery_rate": 1.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        "NOT y"
+      ],
+      "valid_hypotheses": [
+        "NOT y"
+      ],
+      "unique_valid_expressions": [
+        "NOT y"
+      ],
+      "unique_all_expressions": [
+        "NOT y"
+      ]
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Expression: x AND NOT y",
+          "teacher_feedback": "Let’s test the expression **x AND NOT y** against the observations:\n\n1. **x=0, y=1**  \n   NOT y = 0  \n   x AND 0 = 0 → matches observed output 0 ✅\n\n2. **x=1, y=0**  \n   NOT y = 1  \n   x AND 1 = 1 → matches observed output 1 ✅\n\nBoth observations match the expression’s output exactly.  \n\n**Conclusion:** The student’s expression is correct and consistent with the given data. No changes are needed.",
+          "student_refined": "Expression: x AND NOT y"
+        },
+        {
+          "query_index": 1,
+          "student_initial": "Looking at the observations:\n- (x=0, y=1) → 0\n- (x=1, y=0) → 1\n\nTesting single variables:\n- Output = x: (0,1)→0 (matches), (1,0)→1 (matches) ✓\n- Output = y: (0,1)→1 (doesn't match observation of 0) ✗\n- Output = NOT x: (0,1)→1 (doesn't match observation of 0) ✗\n- Output = NOT y: (0,1)→0 (matches), (1,0)→1 (matches) ✓\n\nBoth \"x\" and \"NOT y\" work for these observations. Following the simplicity principle, I'll choose the single variable expression.\n\nExpression: x",
+          "teacher_feedback": "Let’s check the student’s reasoning step by step.  \n\n**Observations:**  \n1. \\( x=0, y=1 \\to \\text{output} = 0 \\)  \n2. \\( x=1, y=0 \\to \\text{output} = 1 \\)  \n\n**Student’s proposed expression:** \\( x \\)  \n\n**Testing:**  \n- For \\( (x=0, y=1) \\), \\( x = 0 \\) → output = 0 ✅ matches  \n- For \\( (x=1, y=0) \\), \\( x = 1 \\) → output = 1 ✅ matches  \n\nBoth observations are satisfied.  \n\nThe student also noted \\( \\lnot y \\) works, but chose \\( x \\) for simplicity.  \nSince both are equally simple here (one literal), and \\( x \\) fits perfectly, this is correct.  \n\n**Conclusion:** The expression \\( x \\) is valid for the given observations.  \n\n**Feedback:**  \nYour expression \\( x \\) is correct — it matches both given input-output pairs. Good job applying the simplicity principle.",
+          "student_refined": "Expression: x"
+        }
+      ],
+      "observation_set_id": "n2_inputs_01_10_outputs_01",
+      "n_observations": 2,
+      "n_ground_truths": 2,
+      "n_queries": 2,
+      "n_valid": 1,
+      "n_unique_valid": 1,
+      "n_unique_all": 1,
+      "n_recovered_gts": 1,
+      "parse_success_count": 2,
+      "parse_success_rate": 1.0,
+      "in_space_rate": 0.5,
+      "valid_rate": 0.5,
+      "novelty_rate": 0.5,
+      "recovery_rate": 0.5,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        "x AND NOT y",
+        "x"
+      ],
+      "valid_hypotheses": [
+        "x"
+      ],
+      "unique_valid_expressions": [
+        "x"
+      ],
+      "unique_all_expressions": [
+        "x"
+      ]
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Expression: NOT y",
+          "teacher_feedback": "Let’s check the student’s expression **NOT y** against the observations.  \n\n**Observation 1:**  \nx=0, y=0 → NOT y = NOT 0 = 1 → matches observed output 1 ✅  \n\n**Observation 2:**  \nx=0, y=1 → NOT y = NOT 1 = 0 → matches observed output 0 ✅  \n\nSince both observations match exactly, the expression **NOT y** is correct.  \n\n**Conclusion:** The student’s expression is already valid and minimal. No changes needed.",
+          "student_refined": "Expression: NOT y"
+        }
+      ],
+      "observation_set_id": "n2_inputs_00_01_outputs_10",
+      "n_observations": 2,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 1,
+      "n_unique_valid": 1,
+      "n_unique_all": 1,
+      "n_recovered_gts": 1,
+      "parse_success_count": 1,
+      "parse_success_rate": 1.0,
+      "in_space_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 1.0,
+      "recovery_rate": 1.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        "NOT y"
+      ],
+      "valid_hypotheses": [
+        "NOT y"
+      ],
+      "unique_valid_expressions": [
+        "NOT y"
+      ],
+      "unique_all_expressions": [
+        "NOT y"
+      ]
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Expression: y",
+          "teacher_feedback": "Let’s check the student’s expression `y` against the given observation.\n\n**Observation:**  \nx = 0, y = 1 → Output = 1  \n\n**Expression evaluation:**  \ny = 1 → Output = 1 ✅\n\nSince there’s only one observation and the expression matches it exactly, the expression `y` is **correct** for the given data.\n\n**Conclusion:**  \nThe student’s expression is consistent with the observation. No changes are needed.",
+          "student_refined": "Expression: y"
+        },
+        {
+          "query_index": 1,
+          "student_initial": "Expression: y",
+          "teacher_feedback": "Let’s check the student’s expression `y` against the given observation:\n\n- Input: \\( x = 0, y = 1 \\)  \n- Expression evaluates to \\( y = 1 \\)  \n- Observed output: \\( 1 \\) ✅\n\nSince there’s only one observation and the expression matches it, the student’s expression is **correct** for the given data.\n\n**Feedback:**  \nYour expression `y` correctly matches the given observation. No changes are needed based on the available data.",
+          "student_refined": "Expression: y"
+        },
+        {
+          "query_index": 2,
+          "student_initial": "Expression: y",
+          "teacher_feedback": "Let’s check the student’s expression `y` against the given observation:\n\n- Input: \\( x = 0, y = 1 \\)  \n- Expression output: \\( y = 1 \\)  \n- Observed output: \\( 1 \\) ✅\n\nThe expression matches the observation exactly.  \n\nSince there’s only one observation here, and the expression `y` fits it perfectly, there’s no evidence of inconsistency.  \n\n**Conclusion:** The student’s expression is correct for the given data.",
+          "student_refined": "Expression: y"
+        }
+      ],
+      "observation_set_id": "n1_inputs_01_outputs_1",
+      "n_observations": 1,
+      "n_ground_truths": 3,
+      "n_queries": 3,
+      "n_valid": 3,
+      "n_unique_valid": 1,
+      "n_unique_all": 1,
+      "n_recovered_gts": 1,
+      "parse_success_count": 3,
+      "parse_success_rate": 1.0,
+      "in_space_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 0.3333333333333333,
+      "recovery_rate": 0.3333333333333333,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        "y",
+        "y",
+        "y"
+      ],
+      "valid_hypotheses": [
+        "y",
+        "y",
+        "y"
+      ],
+      "unique_valid_expressions": [
+        "y"
+      ],
+      "unique_all_expressions": [
+        "y"
+      ]
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Expression: x OR y",
+          "teacher_feedback": "Let’s check the student’s expression **x OR y** against the observations:\n\n1. **x=0, y=1** → 0 OR 1 = 1 ✅ matches observed output 1  \n2. **x=1, y=1** → 1 OR 1 = 1 ✅ matches observed output 1  \n\nNo inconsistencies — the expression fits the given data.  \n\n**Feedback:**  \nYour expression `x OR y` correctly matches both observations. It is valid and already minimal. Well done.",
+          "student_refined": "Expression: x OR y"
+        },
+        {
+          "query_index": 1,
+          "student_initial": "Looking at the observations:\n- (x=0, y=1) → 1\n- (x=1, y=1) → 1\n\nI notice that when y=1, the output is always 1, regardless of x's value. This means the output depends only on y being 1.\n\nTesting candidate expressions:\n- y: When y=1 → 1 (matches both observations)\n- x OR y: When (0,1) → 1, when (1,1) → 1 (matches both observations)\n- x AND y: When (0,1) → 0 (does NOT match first observation)\n\nBoth \"y\" and \"x OR y\" work, but \"y\" is simpler (fewer operators).\n\nExpression: y",
+          "teacher_feedback": "Looking at the student's reasoning and proposed expression:\n\n**Analysis:**\n- Expression: `y`\n- Test case 1: (x=0, y=1) → y=1 ✓ matches observed output 1\n- Test case 2: (x=1, y=1) → y=1 ✓ matches observed output 1\n\nThe student correctly identified that when y=1, the output is always 1 regardless of x's value. The expression `y` perfectly matches both observations and is indeed the simplest possible expression that explains the pattern.\n\n**Conclusion:**\nThe student's expression `y` is correct and parsimonious. It correctly explains all observations with minimal complexity. No edits are needed.\n\n**Feedback:**\n\"Your expression `y` is correct and optimal. It perfectly matches both observations and is the simplest possible solution. Well done on identifying the dependency pattern!\"",
+          "student_refined": "Expression: y"
+        }
+      ],
+      "observation_set_id": "n2_inputs_01_11_outputs_11",
+      "n_observations": 2,
+      "n_ground_truths": 2,
+      "n_queries": 2,
+      "n_valid": 2,
+      "n_unique_valid": 2,
+      "n_unique_all": 2,
+      "n_recovered_gts": 2,
+      "parse_success_count": 2,
+      "parse_success_rate": 1.0,
+      "in_space_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 1.0,
+      "recovery_rate": 1.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        "x OR y",
+        "y"
+      ],
+      "valid_hypotheses": [
+        "x OR y",
+        "y"
+      ],
+      "unique_valid_expressions": [
+        "x OR y",
+        "y"
+      ],
+      "unique_all_expressions": [
+        "x OR y",
+        "y"
+      ]
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Looking at the observations:\n- (x=0, y=1) → 1\n- (x=1, y=0) → 1\n\nTesting single variables:\n- Output = x? No, because when x=0,y=1 → 1 but x=0 would give 0\n- Output = y? No, because when x=1,y=0 → 1 but y=0 would give 0\n- Output = NOT x? No, because when x=0,y=1 → 1 but NOT x would give 1 (works for first), but when x=1,y=0 → 1 but NOT x would give 0 (fails second)\n- Output = NOT y? No, because when x=0,y=1 → 1 but NOT y would give 0 (fails first)\n\nTesting 2-variable combinations:\n- Output = x OR y? When x=0,y=1 → 0 OR 1 = 1 ✓, when x=1,y=0 → 1 OR 0 = 1 ✓\n- Output = x AND y? When x=0,y=1 → 0 AND 1 = 0 ✗ (fails first observation)\n\nThe expression x OR y matches both observations perfectly.\n\nExpression: x OR y",
+          "teacher_feedback": "Your analysis is correct. The expression **x OR y** matches both observations perfectly:\n\n- When x=0, y=1: 0 OR 1 = 1 ✓\n- When x=1, y=0: 1 OR 0 = 1 ✓\n\nYour reasoning process was thorough - you systematically tested single variables and basic Boolean operations, correctly identifying why alternatives like x, y, NOT x, NOT y, and x AND y don't work.\n\nThe expression is already optimal - it's the simplest possible expression that explains the given observations. No edits are needed.\n\n**Final confirmation:** ✅ **x OR y** is correct for the provided observations.",
+          "student_refined": "Expression: x OR y"
+        }
+      ],
+      "observation_set_id": "n2_inputs_01_10_outputs_11",
+      "n_observations": 2,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 1,
+      "n_unique_valid": 1,
+      "n_unique_all": 1,
+      "n_recovered_gts": 1,
+      "parse_success_count": 1,
+      "parse_success_rate": 1.0,
+      "in_space_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 1.0,
+      "recovery_rate": 1.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        "x OR y"
+      ],
+      "valid_hypotheses": [
+        "x OR y"
+      ],
+      "unique_valid_expressions": [
+        "x OR y"
+      ],
+      "unique_all_expressions": [
+        "x OR y"
+      ]
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Expression: x AND y",
+          "teacher_feedback": "Let’s check the student’s expression **x AND y** against the observations:\n\n1. **x=0, y=1** → 0 AND 1 = 0 ✅ matches observed output 0  \n2. **x=1, y=0** → 1 AND 0 = 0 ✅ matches observed output 0  \n\nBoth observations match the expression’s output.  \n\n**Conclusion:** The expression **x AND y** is consistent with the given observations.  \n\nNo edits are needed — the student’s answer is correct for the data provided.",
+          "student_refined": "Expression: x AND y"
+        }
+      ],
+      "observation_set_id": "n2_inputs_01_10_outputs_00",
+      "n_observations": 2,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 1,
+      "n_unique_valid": 1,
+      "n_unique_all": 1,
+      "n_recovered_gts": 1,
+      "parse_success_count": 1,
+      "parse_success_rate": 1.0,
+      "in_space_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 1.0,
+      "recovery_rate": 1.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        "x AND y"
+      ],
+      "valid_hypotheses": [
+        "x AND y"
+      ],
+      "unique_valid_expressions": [
+        "x AND y"
+      ],
+      "unique_all_expressions": [
+        "x AND y"
+      ]
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Expression: x AND NOT y",
+          "teacher_feedback": "Let’s test the student’s expression **x AND NOT y** with the given observation:  \n\n- **x = 0, y = 1**  \n- Compute: **0 AND (NOT 1)** = **0 AND 0** = **0**  \n- Observed output: **0** ✅  \n\nSince there’s only one observation and the expression matches it, the expression is **consistent** with the given data.  \n\n**Feedback:**  \nYour expression `x AND NOT y` correctly matches the observation. With only one data point, it’s impossible to know if it’s the only possible expression, but it is valid for the given case.",
+          "student_refined": "Expression: x AND NOT y"
+        },
+        {
+          "query_index": 1,
+          "student_initial": "Expression: x AND NOT y",
+          "teacher_feedback": "Let’s test the student’s expression **x AND NOT y** with the given observation:  \n\n- **x = 0, y = 1**  \n  NOT y = 0  \n  x AND 0 = 0  \n  Expression output = **0**  \n  Observed output = **0** ✅  \n\nSince there’s only one observation and the expression matches it, the expression is **consistent** with the data.  \n\n**Feedback:**  \nYour expression `x AND NOT y` correctly matches the given observation. With only one data point, it’s impossible to know if it’s the only possible expression, but it is valid for this case.",
+          "student_refined": "Expression: x AND NOT y"
+        },
+        {
+          "query_index": 2,
+          "student_initial": "Expression: x AND NOT y",
+          "teacher_feedback": "Let’s check the student’s expression **x AND NOT y** against the given observation.\n\n**Observation:**  \nx = 0, y = 1  \nExpression: 0 AND NOT 1 → 0 AND 0 → **0**  \nObserved output: **0** ✅\n\n**Conclusion:**  \nThe expression matches the single given observation.  \nNo inconsistency is found.\n\n**Feedback:**  \nYour expression `x AND NOT y` is correct for the given observation.",
+          "student_refined": "Expression: x AND NOT y"
+        }
+      ],
+      "observation_set_id": "n1_inputs_01_outputs_0",
+      "n_observations": 1,
+      "n_ground_truths": 3,
+      "n_queries": 3,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 0,
+      "n_recovered_gts": 0,
+      "parse_success_count": 3,
+      "parse_success_rate": 1.0,
+      "in_space_rate": 0.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        "x AND NOT y",
+        "x AND NOT y",
+        "x AND NOT y"
+      ],
+      "valid_hypotheses": [],
+      "unique_valid_expressions": [],
+      "unique_all_expressions": []
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Expression: x OR y",
+          "teacher_feedback": "Let’s check the student’s expression **x OR y** against each observation:\n\n1. **x=0, y=1** → 0 OR 1 = 1, but observed output is **0** → **mismatch**  \n2. **x=1, y=0** → 1 OR 0 = 1, observed output is **1** → match  \n3. **x=1, y=1** → 1 OR 1 = 1, observed output is **1** → match  \n\nThe first observation fails, so **x OR y** is incorrect.\n\n---\n\n**Correct expression** must give 0 for (0,1), 1 for (1,0), and 1 for (1,1).  \nThat matches **x** alone:  \n- x=0 → 0  \n- x=1 → 1 (regardless of y)  \n\nSo the simplest Boolean expression is **x**.\n\n---\n\n**Feedback to student:**  \nYour expression fails for (x=0, y=1) — it gives 1 instead of 0.  \nThe correct expression is **x**.",
+          "student_refined": "Expression: x"
+        }
+      ],
+      "observation_set_id": "n3_inputs_01_10_11_outputs_011",
+      "n_observations": 3,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 1,
+      "n_unique_valid": 1,
+      "n_unique_all": 1,
+      "n_recovered_gts": 1,
+      "parse_success_count": 1,
+      "parse_success_rate": 1.0,
+      "in_space_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 1.0,
+      "recovery_rate": 1.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        "x"
+      ],
+      "valid_hypotheses": [
+        "x"
+      ],
+      "unique_valid_expressions": [
+        "x"
+      ],
+      "unique_all_expressions": [
+        "x"
+      ]
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Expression: NOT (x AND y)",
+          "teacher_feedback": "Let’s test the student’s expression **NOT (x AND y)** with the given observation:  \n\n- **Inputs:** x = 1, y = 1  \n- Compute: x AND y → 1 AND 1 = 1  \n- Apply NOT → NOT 1 = 0  \n- **Expression output:** 0  \n- **Observed output:** 0 ✅  \n\n**Conclusion:**  \nThe expression matches the single given observation.  \nNo inconsistency is present.  \n\n**Feedback:**  \nYour expression correctly produces the observed output for the given input combination.",
+          "student_refined": "Expression: NOT (x AND y)"
+        },
+        {
+          "query_index": 1,
+          "student_initial": "Expression: NOT (x AND y)",
+          "teacher_feedback": "Let’s check the student’s expression **NOT (x AND y)** against the given observation.\n\n**Observation:**  \nx = 1, y = 1 → output = 0  \n\n**Compute:**  \nx AND y = 1 AND 1 = 1  \nNOT (1) = 0  \n\nThis matches the observed output.\n\nSince there’s only one observation, the expression fits the data.  \nNo inconsistency is present.\n\n**Conclusion:**  \nThe expression **NOT (x AND y)** is consistent with the given observation.",
+          "student_refined": "Expression: NOT (x AND y)"
+        }
+      ],
+      "observation_set_id": "n1_inputs_11_outputs_0",
+      "n_observations": 1,
+      "n_ground_truths": 2,
+      "n_queries": 2,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 0,
+      "n_recovered_gts": 0,
+      "parse_success_count": 2,
+      "parse_success_rate": 1.0,
+      "in_space_rate": 0.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        "NOT (x AND y)",
+        "NOT (x AND y)"
+      ],
+      "valid_hypotheses": [],
+      "unique_valid_expressions": [],
+      "unique_all_expressions": []
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Expression: x AND y",
+          "teacher_feedback": "Let’s test the student’s expression **x AND y** against the given observations.  \n\n**Observation 1:**  \nx = 0, y = 0 → x AND y = 0 → matches output 0 ✅  \n\n**Observation 2:**  \nx = 0, y = 1 → x AND y = 0 → matches output 0 ✅  \n\nBoth observations match the expression’s output.  \n\n**Conclusion:**  \nThe expression is consistent with the given data. No edits are needed based on the available observations.",
+          "student_refined": "Expression: x AND y"
+        },
+        {
+          "query_index": 1,
+          "student_initial": "Expression: x AND NOT y",
+          "teacher_feedback": "Let’s check the student’s expression **x AND NOT y** against the observations.\n\n**Observation 1:**  \nx = 0, y = 0  \nx AND NOT y = 0 AND (NOT 0) = 0 AND 1 = 0 ✅ matches output 0\n\n**Observation 2:**  \nx = 0, y = 1  \nx AND NOT y = 0 AND (NOT 1) = 0 AND 0 = 0 ✅ matches output 0\n\nBoth observations are consistent with the expression.  \nSince there are only two observations here, and both match, the expression is **correct for the given data**.\n\nHowever, note that **x AND NOT y** simplifies to **x AND (NOT y)**, but with only x=0 cases in the data, any expression that evaluates to 0 when x=0 would also fit (e.g., just \"x\" or \"0\").  \nBut the student’s expression is not wrong — it matches the given evidence.\n\n**Feedback:**  \n✅ Your expression matches all given observations. No changes needed based on the data provided.",
+          "student_refined": "Expression: x AND NOT y"
+        }
+      ],
+      "observation_set_id": "n2_inputs_00_01_outputs_00",
+      "n_observations": 2,
+      "n_ground_truths": 2,
+      "n_queries": 2,
+      "n_valid": 1,
+      "n_unique_valid": 1,
+      "n_unique_all": 1,
+      "n_recovered_gts": 1,
+      "parse_success_count": 2,
+      "parse_success_rate": 1.0,
+      "in_space_rate": 0.5,
+      "valid_rate": 0.5,
+      "novelty_rate": 0.5,
+      "recovery_rate": 0.5,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        "x AND y",
+        "x AND NOT y"
+      ],
+      "valid_hypotheses": [
+        "x AND y"
+      ],
+      "unique_valid_expressions": [
+        "x AND y"
+      ],
+      "unique_all_expressions": [
+        "x AND y"
+      ]
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Expression: y AND NOT x",
+          "teacher_feedback": "Let’s check the student’s expression **y AND NOT x** against each observation.\n\n**Observation 1:** x=0, y=0  \nNOT x = 1  \ny AND 1 = 0 AND 1 = 0 ✅ matches output 0  \n\n**Observation 2:** x=0, y=1  \nNOT x = 1  \ny AND 1 = 1 AND 1 = 1 ✅ matches output 1  \n\n**Observation 3:** x=1, y=0  \nNOT x = 0  \ny AND 0 = 0 AND 0 = 0 ✅ matches output 0  \n\nAll observations match the expression’s output.  \n\n**Conclusion:** The expression **y AND NOT x** is correct for the given data.  \nNo edits are needed — it’s already minimal and consistent.",
+          "student_refined": "Expression: y AND NOT x"
+        }
+      ],
+      "observation_set_id": "n3_inputs_00_01_10_outputs_010",
+      "n_observations": 3,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 0,
+      "n_recovered_gts": 0,
+      "parse_success_count": 1,
+      "parse_success_rate": 1.0,
+      "in_space_rate": 0.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        "y AND NOT x"
+      ],
+      "valid_hypotheses": [],
+      "unique_valid_expressions": [],
+      "unique_all_expressions": []
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Expression: NOT x",
+          "teacher_feedback": "Let’s check the student’s expression **NOT x** against each observation:  \n\n- **x=0, y=0** → NOT 0 = 1 ✅ matches output 1  \n- **x=0, y=1** → NOT 0 = 1 ✅ matches output 1  \n- **x=1, y=0** → NOT 1 = 0 ✅ matches output 0  \n\nAll observations match. The expression is correct and cannot be simplified further since **y** is irrelevant to the output.  \n\n**Feedback:**  \nYour expression `NOT x` is correct and consistent with all given observations. Well done.",
+          "student_refined": "Expression: NOT x"
+        }
+      ],
+      "observation_set_id": "n3_inputs_00_01_10_outputs_110",
+      "n_observations": 3,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 1,
+      "n_unique_valid": 1,
+      "n_unique_all": 1,
+      "n_recovered_gts": 1,
+      "parse_success_count": 1,
+      "parse_success_rate": 1.0,
+      "in_space_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 1.0,
+      "recovery_rate": 1.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        "NOT x"
+      ],
+      "valid_hypotheses": [
+        "NOT x"
+      ],
+      "unique_valid_expressions": [
+        "NOT x"
+      ],
+      "unique_all_expressions": [
+        "NOT x"
+      ]
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Expression: NOT x",
+          "teacher_feedback": "Let's test the student's expression **NOT x** against the observations:\n\n1. **x=0, y=1**  \n   NOT x = NOT 0 = 1 → matches observed output **1** ✅\n\n2. **x=1, y=0**  \n   NOT x = NOT 1 = 0 → matches observed output **0** ✅\n\nBoth observations are satisfied, and the expression is already minimal.  \nNo need to include **y** since it doesn't affect the output in these cases.\n\n**Conclusion:** The expression **NOT x** is correct and minimal for the given data.",
+          "student_refined": "Expression: NOT x"
+        },
+        {
+          "query_index": 1,
+          "student_initial": "Expression: NOT x",
+          "teacher_feedback": "Let’s test the expression **NOT x** against the observations.  \n\n**Observation 1:**  \nx = 0, y = 1  \nNOT x = NOT 0 = 1 → matches output 1 ✅  \n\n**Observation 2:**  \nx = 1, y = 0  \nNOT x = NOT 1 = 0 → matches output 0 ✅  \n\nBoth observations match the expression’s outputs.  \nThe expression **NOT x** is correct and cannot be simplified further.  \n\n**Feedback:**  \nYour expression is correct and consistent with all given observations. Well done.",
+          "student_refined": "Expression: NOT x"
+        }
+      ],
+      "observation_set_id": "n2_inputs_01_10_outputs_10",
+      "n_observations": 2,
+      "n_ground_truths": 2,
+      "n_queries": 2,
+      "n_valid": 2,
+      "n_unique_valid": 1,
+      "n_unique_all": 1,
+      "n_recovered_gts": 1,
+      "parse_success_count": 2,
+      "parse_success_rate": 1.0,
+      "in_space_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 0.5,
+      "recovery_rate": 0.5,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        "NOT x",
+        "NOT x"
+      ],
+      "valid_hypotheses": [
+        "NOT x",
+        "NOT x"
+      ],
+      "unique_valid_expressions": [
+        "NOT x"
+      ],
+      "unique_all_expressions": [
+        "NOT x"
+      ]
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Expression: y",
+          "teacher_feedback": "Let's test the student's expression **`y`** against each observation:\n\n- **x=0, y=1** → `y = 1` → matches observed output `1` ✅  \n- **x=1, y=0** → `y = 0` → matches observed output `0` ✅  \n- **x=1, y=1** → `y = 1` → matches observed output `1` ✅  \n\nAll observations match the expression `y`.  \nNo inconsistencies found.\n\n**Conclusion:**  \nThe expression `y` is correct and parsimonious — no edits needed.",
+          "student_refined": "Expression: y"
+        }
+      ],
+      "observation_set_id": "n3_inputs_01_10_11_outputs_101",
+      "n_observations": 3,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 1,
+      "n_unique_valid": 1,
+      "n_unique_all": 1,
+      "n_recovered_gts": 1,
+      "parse_success_count": 1,
+      "parse_success_rate": 1.0,
+      "in_space_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 1.0,
+      "recovery_rate": 1.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        "y"
+      ],
+      "valid_hypotheses": [
+        "y"
+      ],
+      "unique_valid_expressions": [
+        "y"
+      ],
+      "unique_all_expressions": [
+        "y"
+      ]
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Expression: x AND y",
+          "teacher_feedback": "Let’s check the student’s expression **x AND y** against the observations:\n\n1. **x=0, y=0** → 0 AND 0 = 0 ✅ matches output 0  \n2. **x=0, y=1** → 0 AND 1 = 0 ✅ matches output 0  \n3. **x=1, y=1** → 1 AND 1 = 1 ✅ matches output 1  \n\nAll observations match the expression’s output.  \n\n**Conclusion:** The expression **x AND y** is correct for the given data. No edits are needed.",
+          "student_refined": "Expression: x AND y"
+        },
+        {
+          "query_index": 1,
+          "student_initial": "Expression: x AND y",
+          "teacher_feedback": "Let’s check the student’s expression **x AND y** against the observations:\n\n1. \\( x=0, y=0 \\) → \\( 0 \\ \\text{AND} \\ 0 = 0 \\) ✅ matches output 0  \n2. \\( x=0, y=1 \\) → \\( 0 \\ \\text{AND} \\ 1 = 0 \\) ✅ matches output 0  \n3. \\( x=1, y=1 \\) → \\( 1 \\ \\text{AND} \\ 1 = 1 \\) ✅ matches output 1  \n\nAll observations match the expression exactly.  \n\n**Conclusion:**  \nThe expression **x AND y** is correct for the given data. No edits are needed.",
+          "student_refined": "Expression: x AND y"
+        }
+      ],
+      "observation_set_id": "n3_inputs_00_01_11_outputs_001",
+      "n_observations": 3,
+      "n_ground_truths": 2,
+      "n_queries": 2,
+      "n_valid": 2,
+      "n_unique_valid": 1,
+      "n_unique_all": 1,
+      "n_recovered_gts": 1,
+      "parse_success_count": 2,
+      "parse_success_rate": 1.0,
+      "in_space_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 0.5,
+      "recovery_rate": 0.5,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        "x AND y",
+        "x AND y"
+      ],
+      "valid_hypotheses": [
+        "x AND y",
+        "x AND y"
+      ],
+      "unique_valid_expressions": [
+        "x AND y"
+      ],
+      "unique_all_expressions": [
+        "x AND y"
+      ]
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Expression: x AND y",
+          "teacher_feedback": "Let’s test the student’s expression **x AND y** against the observations:\n\n1. **x = 0, y = 1** → 0 AND 1 = 0 ✅ matches observed output 0  \n2. **x = 1, y = 1** → 1 AND 1 = 1 ✅ matches observed output 1  \n\nBoth observations match the expression’s output exactly.  \n\n**Conclusion:**  \nThe expression **x AND y** is correct for the given data. No edits are needed.",
+          "student_refined": "Expression: x AND y"
+        },
+        {
+          "query_index": 1,
+          "student_initial": "Expression: x AND y",
+          "teacher_feedback": "Let’s test the student’s expression **x AND y** against the observations:  \n\n1. **x=0, y=1** → 0 AND 1 = 0 → matches observed output 0 ✅  \n2. **x=1, y=1** → 1 AND 1 = 1 → matches observed output 1 ✅  \n\nBoth observations are consistent with **x AND y**.  \n\n**Conclusion:** The expression is correct for the given data.  \n\n**Feedback:**  \nYour expression `x AND y` correctly matches all the given observations. Good job.",
+          "student_refined": "Expression: x AND y"
+        }
+      ],
+      "observation_set_id": "n2_inputs_01_11_outputs_01",
+      "n_observations": 2,
+      "n_ground_truths": 2,
+      "n_queries": 2,
+      "n_valid": 2,
+      "n_unique_valid": 1,
+      "n_unique_all": 1,
+      "n_recovered_gts": 1,
+      "parse_success_count": 2,
+      "parse_success_rate": 1.0,
+      "in_space_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 0.5,
+      "recovery_rate": 0.5,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        "x AND y",
+        "x AND y"
+      ],
+      "valid_hypotheses": [
+        "x AND y",
+        "x AND y"
+      ],
+      "unique_valid_expressions": [
+        "x AND y"
+      ],
+      "unique_all_expressions": [
+        "x AND y"
+      ]
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Expression: y",
+          "teacher_feedback": "Let’s check the student’s expression **y** against the observations:\n\n- (x=0, y=0) → y = 0 → matches output 0 ✅  \n- (x=0, y=1) → y = 1 → matches output 1 ✅  \n- (x=1, y=0) → y = 0 → matches output 0 ✅  \n- (x=1, y=1) → y = 1 → matches output 1 ✅  \n\nAll outputs match exactly.  \nThe expression **y** is correct and is the simplest possible for this truth table.\n\n**Feedback:**  \n✅ Your expression `y` is correct — it matches all given observations and is already minimal. Well done.",
+          "student_refined": "Expression: y"
+        }
+      ],
+      "observation_set_id": "n4_inputs_00_01_10_11_outputs_0101",
+      "n_observations": 4,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 1,
+      "n_unique_valid": 1,
+      "n_unique_all": 1,
+      "n_recovered_gts": 1,
+      "parse_success_count": 1,
+      "parse_success_rate": 1.0,
+      "in_space_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 1.0,
+      "recovery_rate": 1.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        "y"
+      ],
+      "valid_hypotheses": [
+        "y"
+      ],
+      "unique_valid_expressions": [
+        "y"
+      ],
+      "unique_all_expressions": [
+        "y"
+      ]
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Expression: x OR y",
+          "teacher_feedback": "Let’s check the student’s expression **x OR y** against the observations:\n\n1. **x=0, y=0** → 0 OR 0 = 0 ✅ matches observed output 0  \n2. **x=0, y=1** → 0 OR 1 = 1 ✅ matches observed output 1  \n3. **x=1, y=1** → 1 OR 1 = 1 ✅ matches observed output 1  \n\nAll outputs match exactly.  \n\n**Conclusion:**  \nThe expression **x OR y** is correct for the given observations. No edits are needed.",
+          "student_refined": "Expression: x OR y"
+        },
+        {
+          "query_index": 1,
+          "student_initial": "Expression: x OR y",
+          "teacher_feedback": "Let’s check each observation against **x OR y**:\n\n1. **x=0, y=0** → 0 OR 0 = 0 ✅ matches observed output 0  \n2. **x=0, y=1** → 0 OR 1 = 1 ✅ matches observed output 1  \n3. **x=1, y=1** → 1 OR 1 = 1 ✅ matches observed output 1  \n\nAll outputs match the given observations.  \n\n**Conclusion:** The expression **x OR y** is correct for the given data. No edits needed.",
+          "student_refined": "Expression: x OR y"
+        }
+      ],
+      "observation_set_id": "n3_inputs_00_01_11_outputs_011",
+      "n_observations": 3,
+      "n_ground_truths": 2,
+      "n_queries": 2,
+      "n_valid": 2,
+      "n_unique_valid": 1,
+      "n_unique_all": 1,
+      "n_recovered_gts": 1,
+      "parse_success_count": 2,
+      "parse_success_rate": 1.0,
+      "in_space_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 0.5,
+      "recovery_rate": 0.5,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        "x OR y",
+        "x OR y"
+      ],
+      "valid_hypotheses": [
+        "x OR y",
+        "x OR y"
+      ],
+      "unique_valid_expressions": [
+        "x OR y"
+      ],
+      "unique_all_expressions": [
+        "x OR y"
+      ]
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Expression: NOT x",
+          "teacher_feedback": "Let’s check the student’s expression `NOT x` against the observations:\n\n1. **x=0, y=0** → `NOT 0` = 1 ✅ matches observed output 1  \n2. **x=1, y=0** → `NOT 1` = 0 ✅ matches observed output 0  \n3. **x=1, y=1** → `NOT 1` = 0 ✅ matches observed output 0  \n\nThe expression `NOT x` produces the correct output for all given input combinations.  \nNo inconsistencies found.  \n\n**Conclusion:** The student’s expression is correct and parsimonious.",
+          "student_refined": "Expression: NOT x"
+        }
+      ],
+      "observation_set_id": "n3_inputs_00_10_11_outputs_100",
+      "n_observations": 3,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 1,
+      "n_unique_valid": 1,
+      "n_unique_all": 1,
+      "n_recovered_gts": 1,
+      "parse_success_count": 1,
+      "parse_success_rate": 1.0,
+      "in_space_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 1.0,
+      "recovery_rate": 1.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        "NOT x"
+      ],
+      "valid_hypotheses": [
+        "NOT x"
+      ],
+      "unique_valid_expressions": [
+        "NOT x"
+      ],
+      "unique_all_expressions": [
+        "NOT x"
+      ]
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Expression: NOT y",
+          "teacher_feedback": "Let’s check the student’s expression **NOT y** against the observations:\n\n1. \\( x=0, y=0 \\) → \\( \\text{NOT } 0 = 1 \\) ✅ matches output 1  \n2. \\( x=1, y=0 \\) → \\( \\text{NOT } 0 = 1 \\) ✅ matches output 1  \n3. \\( x=1, y=1 \\) → \\( \\text{NOT } 1 = 0 \\) ✅ matches output 0  \n\nAll outputs match exactly. The expression **NOT y** is correct and already minimal.  \n\n**Feedback:**  \nYour expression `NOT y` is correct for all given observations. No changes are needed.",
+          "student_refined": "Expression: NOT y"
+        }
+      ],
+      "observation_set_id": "n3_inputs_00_10_11_outputs_110",
+      "n_observations": 3,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 1,
+      "n_unique_valid": 1,
+      "n_unique_all": 1,
+      "n_recovered_gts": 1,
+      "parse_success_count": 1,
+      "parse_success_rate": 1.0,
+      "in_space_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 1.0,
+      "recovery_rate": 1.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        "NOT y"
+      ],
+      "valid_hypotheses": [
+        "NOT y"
+      ],
+      "unique_valid_expressions": [
+        "NOT y"
+      ],
+      "unique_all_expressions": [
+        "NOT y"
+      ]
+    }
+  ]
+}

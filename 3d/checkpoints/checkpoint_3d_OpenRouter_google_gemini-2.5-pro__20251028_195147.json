@@ -1,0 +1,178 @@
+{
+  "run_id": "20251028_195147",
+  "llm_name": "OpenRouter(google/gemini-2.5-pro)",
+  "n_samples": 3,
+  "n_queries_per_sample": null,
+  "query_multiplier": 1.0,
+  "seed": 33550336,
+  "timestamp": "2025-10-28T20:01:12.426480",
+  "results": [
+    {
+      "observation_set_id": "g3_h3_b2_028",
+      "n_observations": 1,
+      "n_ground_truths": 9,
+      "n_queries": 9,
+      "n_valid": 9,
+      "n_unique": 9,
+      "n_recovered_gts": 9,
+      "parse_success_count": 9,
+      "parse_success_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 1.0,
+      "recovery_rate": 1.0,
+      "token_usage": {
+        "prompt_tokens": 12558,
+        "completion_tokens": 18225,
+        "total_tokens": 30783
+      },
+      "cost": 0.1979475,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        "Layer 1:\n0 0 0\n0 1 0\n1 0 0\nLayer 2:\n0 0 0\n0 1 0\n0 0 0",
+        "Layer 1:\n0 0 0\n0 1 0\n1 0 0\nLayer 2:\n0 0 0\n0 1 0\n0 0 0\nLayer 3:\n0 0 0\n0 1 0\n0 0 0",
+        "Layer 1:\n0 0 0\n0 1 0\n1 0 0",
+        "Layer 1:\n0 0 0\n0 1 0\n1 0 0\nLayer 2:\n0 0 0\n0 0 0\n1 0 0",
+        "Layer 1:\n0 0 0\n0 1 0\n1 0 0\nLayer 2:\n0 0 0\n0 0 0\n1 0 0\nLayer 3:\n0 0 0\n0 0 0\n1 0 0",
+        "Layer 1:\n0 0 0\n0 1 0\n1 0 0\nLayer 2:\n0 0 0\n0 1 0\n1 0 0",
+        "Layer 1:\n0 0 0\n0 1 0\n1 0 0\nLayer 2:\n0 0 0\n0 1 0\n1 0 0\nLayer 3:\n0 0 0\n0 0 0\n1 0 0",
+        "Layer 1:\n0 0 0\n0 1 0\n1 0 0\nLayer 2:\n0 0 0\n0 1 0\n1 0 0\nLayer 3:\n0 0 0\n0 1 0\n0 0 0",
+        "Layer 1:\n0 0 0\n0 1 0\n1 0 0\nLayer 2:\n0 0 0\n0 1 0\n1 0 0\nLayer 3:\n0 0 0\n0 1 0\n1 0 0"
+      ],
+      "unique_structures": [
+        "Layer 1:\n0 0 0\n0 1 0\n1 0 0\nLayer 2:\n0 0 0\n0 1 0\n0 0 0",
+        "Layer 1:\n0 0 0\n0 1 0\n1 0 0\nLayer 2:\n0 0 0\n0 1 0\n0 0 0\nLayer 3:\n0 0 0\n0 1 0\n0 0 0",
+        "Layer 1:\n0 0 0\n0 1 0\n1 0 0",
+        "Layer 1:\n0 0 0\n0 1 0\n1 0 0\nLayer 2:\n0 0 0\n0 0 0\n1 0 0",
+        "Layer 1:\n0 0 0\n0 1 0\n1 0 0\nLayer 2:\n0 0 0\n0 0 0\n1 0 0\nLayer 3:\n0 0 0\n0 0 0\n1 0 0",
+        "Layer 1:\n0 0 0\n0 1 0\n1 0 0\nLayer 2:\n0 0 0\n0 1 0\n1 0 0",
+        "Layer 1:\n0 0 0\n0 1 0\n1 0 0\nLayer 2:\n0 0 0\n0 1 0\n1 0 0\nLayer 3:\n0 0 0\n0 0 0\n1 0 0",
+        "Layer 1:\n0 0 0\n0 1 0\n1 0 0\nLayer 2:\n0 0 0\n0 1 0\n1 0 0\nLayer 3:\n0 0 0\n0 1 0\n0 0 0",
+        "Layer 1:\n0 0 0\n0 1 0\n1 0 0\nLayer 2:\n0 0 0\n0 1 0\n1 0 0\nLayer 3:\n0 0 0\n0 1 0\n1 0 0"
+      ]
+    },
+    {
+      "observation_set_id": "g3_h3_b2_034",
+      "n_observations": 1,
+      "n_ground_truths": 9,
+      "n_queries": 9,
+      "n_valid": 9,
+      "n_unique": 9,
+      "n_recovered_gts": 9,
+      "parse_success_count": 9,
+      "parse_success_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 1.0,
+      "recovery_rate": 1.0,
+      "token_usage": {
+        "prompt_tokens": 12466,
+        "completion_tokens": 19227,
+        "total_tokens": 31693
+      },
+      "cost": 0.2078525,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {
+          "connection_error": 1
+        }
+      },
+      "all_hypotheses": [
+        "Layer 1:\n0 0 0\n0 0 0\n1 1 0\nLayer 2:\n0 0 0\n0 0 0\n0 1 0",
+        "Layer 1:\n0 0 0\n0 0 0\n1 1 0\nLayer 2:\n0 0 0\n0 0 0\n1 0 0",
+        "Layer 1:\n0 0 0\n0 0 0\n1 1 0",
+        "Layer 1:\n0 0 0\n0 0 0\n1 1 0\nLayer 2:\n0 0 0\n0 0 0\n1 1 0",
+        "Layer 1:\n0 0 0\n0 0 0\n1 1 0\nLayer 2:\n0 0 0\n0 0 0\n0 1 0\nLayer 3:\n0 0 0\n0 0 0\n0 1 0",
+        "Layer 1:\n0 0 0\n0 0 0\n1 1 0\nLayer 2:\n0 0 0\n0 0 0\n1 1 0\nLayer 3:\n0 0 0\n0 0 0\n1 1 0",
+        "Layer 1:\n0 0 0\n0 0 0\n1 1 0\nLayer 2:\n0 0 0\n0 0 0\n1 0 0\nLayer 3:\n0 0 0\n0 0 0\n1 0 0",
+        "Layer 1:\n0 0 0\n0 0 0\n1 1 0\nLayer 2:\n0 0 0\n0 0 0\n1 1 0\nLayer 3:\n0 0 0\n0 0 0\n0 1 0",
+        "Layer 1:\n0 0 0\n0 0 0\n1 1 0\nLayer 2:\n0 0 0\n0 0 0\n1 1 0\nLayer 3:\n0 0 0\n0 0 0\n1 0 0"
+      ],
+      "unique_structures": [
+        "Layer 1:\n0 0 0\n0 0 0\n1 1 0\nLayer 2:\n0 0 0\n0 0 0\n0 1 0",
+        "Layer 1:\n0 0 0\n0 0 0\n1 1 0\nLayer 2:\n0 0 0\n0 0 0\n1 0 0",
+        "Layer 1:\n0 0 0\n0 0 0\n1 1 0",
+        "Layer 1:\n0 0 0\n0 0 0\n1 1 0\nLayer 2:\n0 0 0\n0 0 0\n1 1 0",
+        "Layer 1:\n0 0 0\n0 0 0\n1 1 0\nLayer 2:\n0 0 0\n0 0 0\n0 1 0\nLayer 3:\n0 0 0\n0 0 0\n0 1 0",
+        "Layer 1:\n0 0 0\n0 0 0\n1 1 0\nLayer 2:\n0 0 0\n0 0 0\n1 1 0\nLayer 3:\n0 0 0\n0 0 0\n1 1 0",
+        "Layer 1:\n0 0 0\n0 0 0\n1 1 0\nLayer 2:\n0 0 0\n0 0 0\n1 0 0\nLayer 3:\n0 0 0\n0 0 0\n1 0 0",
+        "Layer 1:\n0 0 0\n0 0 0\n1 1 0\nLayer 2:\n0 0 0\n0 0 0\n1 1 0\nLayer 3:\n0 0 0\n0 0 0\n0 1 0",
+        "Layer 1:\n0 0 0\n0 0 0\n1 1 0\nLayer 2:\n0 0 0\n0 0 0\n1 1 0\nLayer 3:\n0 0 0\n0 0 0\n1 0 0"
+      ]
+    },
+    {
+      "observation_set_id": "g3_h3_b2_015",
+      "n_observations": 1,
+      "n_ground_truths": 9,
+      "n_queries": 9,
+      "n_valid": 8,
+      "n_unique": 8,
+      "n_recovered_gts": 8,
+      "parse_success_count": 8,
+      "parse_success_rate": 0.8888888888888888,
+      "valid_rate": 0.8888888888888888,
+      "novelty_rate": 0.8888888888888888,
+      "recovery_rate": 0.8888888888888888,
+      "token_usage": {
+        "prompt_tokens": 10789,
+        "completion_tokens": 16032,
+        "total_tokens": 26821
+      },
+      "cost": 0.17380625,
+      "errors": [
+        {
+          "query_index": 2,
+          "attempt": 3,
+          "error_message": "Error querying OpenRouter: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)')))",
+          "error_type": "connection_error"
+        }
+      ],
+      "error_summary": {
+        "total_errors": 1,
+        "error_types": {
+          "connection_error": 4
+        }
+      },
+      "all_hypotheses": [
+        "Layer 1:\n0 1 0\n0 0 0\n0 0 1\nLayer 2:\n0 1 0\n0 0 0\n0 0 0",
+        "Layer 1:\n0 1 0\n0 0 0\n0 0 1",
+        "Layer 1:\n0 1 0\n0 0 0\n0 0 1\nLayer 2:\n0 0 0\n0 0 0\n0 0 1",
+        "Layer 1:\n0 1 0\n0 0 0\n0 0 1\nLayer 2:\n0 1 0\n0 0 0\n0 0 1",
+        "Layer 1:\n0 1 0\n0 0 0\n0 0 1\nLayer 2:\n0 0 0\n0 0 0\n0 0 1\nLayer 3:\n0 0 0\n0 0 0\n0 0 1",
+        "Layer 1:\n0 1 0\n0 0 0\n0 0 1\nLayer 2:\n0 1 0\n0 0 0\n0 0 1\nLayer 3:\n0 0 0\n0 0 0\n0 0 1",
+        "Layer 1:\n0 1 0\n0 0 0\n0 0 1\nLayer 2:\n0 1 0\n0 0 0\n0 0 0\nLayer 3:\n0 1 0\n0 0 0\n0 0 0",
+        "Layer 1:\n0 1 0\n0 0 0\n0 0 1\nLayer 2:\n0 1 0\n0 0 0\n0 0 1\nLayer 3:\n0 1 0\n0 0 0\n0 0 0"
+      ],
+      "unique_structures": [
+        "Layer 1:\n0 1 0\n0 0 0\n0 0 1\nLayer 2:\n0 1 0\n0 0 0\n0 0 0",
+        "Layer 1:\n0 1 0\n0 0 0\n0 0 1",
+        "Layer 1:\n0 1 0\n0 0 0\n0 0 1\nLayer 2:\n0 0 0\n0 0 0\n0 0 1",
+        "Layer 1:\n0 1 0\n0 0 0\n0 0 1\nLayer 2:\n0 1 0\n0 0 0\n0 0 1",
+        "Layer 1:\n0 1 0\n0 0 0\n0 0 1\nLayer 2:\n0 0 0\n0 0 0\n0 0 1\nLayer 3:\n0 0 0\n0 0 0\n0 0 1",
+        "Layer 1:\n0 1 0\n0 0 0\n0 0 1\nLayer 2:\n0 1 0\n0 0 0\n0 0 1\nLayer 3:\n0 0 0\n0 0 0\n0 0 1",
+        "Layer 1:\n0 1 0\n0 0 0\n0 0 1\nLayer 2:\n0 1 0\n0 0 0\n0 0 0\nLayer 3:\n0 1 0\n0 0 0\n0 0 0",
+        "Layer 1:\n0 1 0\n0 0 0\n0 0 1\nLayer 2:\n0 1 0\n0 0 0\n0 0 1\nLayer 3:\n0 1 0\n0 0 0\n0 0 0"
+      ]
+    }
+  ],
+  "total_token_usage": {
+    "prompt_tokens": 35813,
+    "completion_tokens": 53484,
+    "total_tokens": 89297
+  },
+  "total_cost": 0.57960625,
+  "all_errors": [
+    {
+      "query_index": 2,
+      "attempt": 3,
+      "error_message": "Error querying OpenRouter: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)')))",
+      "error_type": "connection_error"
+    }
+  ],
+  "total_error_counts": {
+    "connection_error": 4
+  }
+}

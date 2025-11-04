@@ -1,0 +1,430 @@
+{
+  "run_id": "20251104_142247",
+  "llm_name": "OpenRouter(openai/gpt-4o-mini)",
+  "n_samples": 10,
+  "n_queries_per_sample": null,
+  "query_multiplier": 1.0,
+  "seed": 1234567,
+  "timestamp": "2025-11-04T14:27:08.026177",
+  "results": [
+    {
+      "observation_set_id": "g2_h3_b2_003",
+      "n_observations": 1,
+      "n_ground_truths": 9,
+      "n_queries": 9,
+      "n_valid": 1,
+      "n_unique": 8,
+      "n_recovered_gts": 1,
+      "parse_success_count": 9,
+      "parse_success_rate": 1.0,
+      "valid_rate": 0.1111111111111111,
+      "novelty_rate": 0.8888888888888888,
+      "recovery_rate": 0.1111111111111111,
+      "token_usage": {
+        "prompt_tokens": 7508,
+        "completion_tokens": 877,
+        "total_tokens": 8385
+      },
+      "cost": 0.008385,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        "Layer 1:\n1 0\n0 1",
+        "Layer 1:\n1 0\n0 1\nLayer 2:\n1 1\n0 0",
+        "Layer 1:\n1 0\n1 0\nLayer 2:\n0 1\n1 1\nLayer 3:\n0 0\n1 0",
+        "Layer 1:\n1 0\n0 1\nLayer 2:\n1 0\n1 1",
+        "Layer 1:\n1 1\n0 0\nLayer 2:\n1 0\n1 0\nLayer 3:\n0 1\n0 1",
+        "Layer 1:\n1 1\n0 1\nLayer 2:\n0 1\n1 0\nLayer 3:\n1 0\n0 0",
+        "Layer 1:\n1 0\n0 1\nLayer 2:\n1 0\n1 1",
+        "Layer 1:\n1 0\n1 0\nLayer 2:\n1 1\n1 0",
+        "Layer 1:\n1 0\n0 1\nLayer 2:\n1 1\n0 0\nLayer 3:\n0 0\n1 1"
+      ],
+      "unique_structures": [
+        "Layer 1:\n1 0\n0 1",
+        "Layer 1:\n1 0\n0 1\nLayer 2:\n1 1\n0 0",
+        "Layer 1:\n1 0\n1 0\nLayer 2:\n0 1\n1 1\nLayer 3:\n0 0\n1 0",
+        "Layer 1:\n1 0\n0 1\nLayer 2:\n1 0\n1 1",
+        "Layer 1:\n1 1\n0 0\nLayer 2:\n1 0\n1 0\nLayer 3:\n0 1\n0 1",
+        "Layer 1:\n1 1\n0 1\nLayer 2:\n0 1\n1 0\nLayer 3:\n1 0\n0 0",
+        "Layer 1:\n1 0\n1 0\nLayer 2:\n1 1\n1 0",
+        "Layer 1:\n1 0\n0 1\nLayer 2:\n1 1\n0 0\nLayer 3:\n0 0\n1 1"
+      ]
+    },
+    {
+      "observation_set_id": "g2_h3_b1_004",
+      "n_observations": 1,
+      "n_ground_truths": 3,
+      "n_queries": 3,
+      "n_valid": 1,
+      "n_unique": 3,
+      "n_recovered_gts": 1,
+      "parse_success_count": 3,
+      "parse_success_rate": 1.0,
+      "valid_rate": 0.3333333333333333,
+      "novelty_rate": 1.0,
+      "recovery_rate": 0.3333333333333333,
+      "token_usage": {
+        "prompt_tokens": 2236,
+        "completion_tokens": 696,
+        "total_tokens": 2932
+      },
+      "cost": 0.0029319999999999997,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        "Layer 1:\n0 0\n0 1\nLayer 2:\n0 0\n0 1\nLayer 3:\n0 0\n0 1",
+        "Layer 1:\n1 0\n1 1\nLayer 2:\n0 0\n0 1",
+        "Layer 1:\n1 0\n1 1\nLayer 2:\n1 0\n1 1"
+      ],
+      "unique_structures": [
+        "Layer 1:\n0 0\n0 1\nLayer 2:\n0 0\n0 1\nLayer 3:\n0 0\n0 1",
+        "Layer 1:\n1 0\n1 1\nLayer 2:\n0 0\n0 1",
+        "Layer 1:\n1 0\n1 1\nLayer 2:\n1 0\n1 1"
+      ]
+    },
+    {
+      "observation_set_id": "g2_h3_b1_002",
+      "n_observations": 1,
+      "n_ground_truths": 3,
+      "n_queries": 3,
+      "n_valid": 0,
+      "n_unique": 3,
+      "n_recovered_gts": 0,
+      "parse_success_count": 3,
+      "parse_success_rate": 1.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 1.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 2212,
+        "completion_tokens": 462,
+        "total_tokens": 2674
+      },
+      "cost": 0.002674,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        "Layer 1:\n1 0\n0 0\nLayer 2:\n1 0\n0 0",
+        "Layer 1:\n1 0\n0 0\nLayer 2:\n1 1\n0 0",
+        "Layer 1:\n1 1\n0 0\nLayer 2:\n0 1\n0 0"
+      ],
+      "unique_structures": [
+        "Layer 1:\n1 0\n0 0\nLayer 2:\n1 0\n0 0",
+        "Layer 1:\n1 0\n0 0\nLayer 2:\n1 1\n0 0",
+        "Layer 1:\n1 1\n0 0\nLayer 2:\n0 1\n0 0"
+      ]
+    },
+    {
+      "observation_set_id": "g2_h3_b2_001",
+      "n_observations": 1,
+      "n_ground_truths": 9,
+      "n_queries": 9,
+      "n_valid": 1,
+      "n_unique": 3,
+      "n_recovered_gts": 1,
+      "parse_success_count": 9,
+      "parse_success_rate": 1.0,
+      "valid_rate": 0.1111111111111111,
+      "novelty_rate": 0.3333333333333333,
+      "recovery_rate": 0.1111111111111111,
+      "token_usage": {
+        "prompt_tokens": 7152,
+        "completion_tokens": 1050,
+        "total_tokens": 8202
+      },
+      "cost": 0.008202,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        "Layer 1:\n1 1\n0 0\nLayer 2:\n1 1\n0 0\nLayer 3:\n1 1\n0 0",
+        "Layer 1:\n1 1\n1 0\nLayer 2:\n1 0\n0 0",
+        "Layer 1:\n1 1\n1 0\nLayer 2:\n1 0\n0 0",
+        "Layer 1:\n1 0\n1 0\nLayer 2:\n1 1\n0 0",
+        "Layer 1:\n1 0\n1 0\nLayer 2:\n1 1\n0 0",
+        "Layer 1:\n1 1\n1 0\nLayer 2:\n1 0\n0 0",
+        "Layer 1:\n1 1\n1 0\nLayer 2:\n1 0\n0 0",
+        "Layer 1:\n1 1\n1 0\nLayer 2:\n1 0\n0 0",
+        "Layer 1:\n1 1\n1 0\nLayer 2:\n1 0\n0 0"
+      ],
+      "unique_structures": [
+        "Layer 1:\n1 1\n0 0\nLayer 2:\n1 1\n0 0\nLayer 3:\n1 1\n0 0",
+        "Layer 1:\n1 1\n1 0\nLayer 2:\n1 0\n0 0",
+        "Layer 1:\n1 0\n1 0\nLayer 2:\n1 1\n0 0"
+      ]
+    },
+    {
+      "observation_set_id": "g2_h3_b1_003",
+      "n_observations": 1,
+      "n_ground_truths": 3,
+      "n_queries": 3,
+      "n_valid": 1,
+      "n_unique": 3,
+      "n_recovered_gts": 1,
+      "parse_success_count": 3,
+      "parse_success_rate": 1.0,
+      "valid_rate": 0.3333333333333333,
+      "novelty_rate": 1.0,
+      "recovery_rate": 0.3333333333333333,
+      "token_usage": {
+        "prompt_tokens": 2224,
+        "completion_tokens": 427,
+        "total_tokens": 2651
+      },
+      "cost": 0.002651,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        "Layer 1:\n0 0\n1 0\nLayer 2:\n0 0\n1 0",
+        "Layer 1:\n1 0\n1 0\nLayer 2:\n1 0\n0 0\nLayer 3:\n0 0\n1 0",
+        "Layer 1:\n1 0\n1 0\nLayer 2:\n1 0\n1 0\nLayer 3:\n0 0\n1 0"
+      ],
+      "unique_structures": [
+        "Layer 1:\n0 0\n1 0\nLayer 2:\n0 0\n1 0",
+        "Layer 1:\n1 0\n1 0\nLayer 2:\n1 0\n0 0\nLayer 3:\n0 0\n1 0",
+        "Layer 1:\n1 0\n1 0\nLayer 2:\n1 0\n1 0\nLayer 3:\n0 0\n1 0"
+      ]
+    },
+    {
+      "observation_set_id": "g2_h3_b2_004",
+      "n_observations": 1,
+      "n_ground_truths": 9,
+      "n_queries": 9,
+      "n_valid": 1,
+      "n_unique": 9,
+      "n_recovered_gts": 1,
+      "parse_success_count": 9,
+      "parse_success_rate": 1.0,
+      "valid_rate": 0.1111111111111111,
+      "novelty_rate": 1.0,
+      "recovery_rate": 0.1111111111111111,
+      "token_usage": {
+        "prompt_tokens": 7840,
+        "completion_tokens": 1310,
+        "total_tokens": 9150
+      },
+      "cost": 0.00915,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        "Layer 1:\n0 1\n1 0\nLayer 2:\n0 1\n1 0\nLayer 3:\n0 1\n1 0",
+        "Layer 1:\n1 0\n1 0\nLayer 2:\n1 0\n0 0\nLayer 3:\n0 0\n1 1",
+        "Layer 1:\n1 0\n1 1\nLayer 2:\n0 0\n1 0\nLayer 3:\n0 1\n0 0",
+        "Layer 1:\n1 0\n1 0\nLayer 2:\n1 0\n1 0",
+        "Layer 1:\n1 1\n0 1\nLayer 2:\n0 0\n1 0\nLayer 3:\n0 1\n0 0",
+        "Layer 1:\n1 0\n1 0\nLayer 2:\n0 1\n0 0",
+        "Layer 1:\n1 1\n0 1\nLayer 2:\n1 0\n0 0\nLayer 3:\n0 1\n0 0",
+        "Layer 1:\n1 1\n0 1\nLayer 2:\n1 0\n1 0\nLayer 3:\n0 1\n0 0",
+        "Layer 1:\n1 0\n1 0\nLayer 2:\n1 1\n0 0\nLayer 3:\n0 0\n1 1"
+      ],
+      "unique_structures": [
+        "Layer 1:\n0 1\n1 0\nLayer 2:\n0 1\n1 0\nLayer 3:\n0 1\n1 0",
+        "Layer 1:\n1 0\n1 0\nLayer 2:\n1 0\n0 0\nLayer 3:\n0 0\n1 1",
+        "Layer 1:\n1 0\n1 1\nLayer 2:\n0 0\n1 0\nLayer 3:\n0 1\n0 0",
+        "Layer 1:\n1 0\n1 0\nLayer 2:\n1 0\n1 0",
+        "Layer 1:\n1 1\n0 1\nLayer 2:\n0 0\n1 0\nLayer 3:\n0 1\n0 0",
+        "Layer 1:\n1 0\n1 0\nLayer 2:\n0 1\n0 0",
+        "Layer 1:\n1 1\n0 1\nLayer 2:\n1 0\n0 0\nLayer 3:\n0 1\n0 0",
+        "Layer 1:\n1 1\n0 1\nLayer 2:\n1 0\n1 0\nLayer 3:\n0 1\n0 0",
+        "Layer 1:\n1 0\n1 0\nLayer 2:\n1 1\n0 0\nLayer 3:\n0 0\n1 1"
+      ]
+    },
+    {
+      "observation_set_id": "g2_h3_b1_001",
+      "n_observations": 1,
+      "n_ground_truths": 3,
+      "n_queries": 3,
+      "n_valid": 1,
+      "n_unique": 3,
+      "n_recovered_gts": 1,
+      "parse_success_count": 3,
+      "parse_success_rate": 1.0,
+      "valid_rate": 0.3333333333333333,
+      "novelty_rate": 1.0,
+      "recovery_rate": 0.3333333333333333,
+      "token_usage": {
+        "prompt_tokens": 2188,
+        "completion_tokens": 542,
+        "total_tokens": 2730
+      },
+      "cost": 0.0027300000000000002,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        "Layer 1:\n1 0\n0 0",
+        "Layer 1:\n1 0\n0 1\nLayer 2:\n1 0\n0 0",
+        "Layer 1:\n1 0\n1 0\nLayer 2:\n1 0\n0 0"
+      ],
+      "unique_structures": [
+        "Layer 1:\n1 0\n0 0",
+        "Layer 1:\n1 0\n0 1\nLayer 2:\n1 0\n0 0",
+        "Layer 1:\n1 0\n1 0\nLayer 2:\n1 0\n0 0"
+      ]
+    },
+    {
+      "observation_set_id": "g2_h3_b2_002",
+      "n_observations": 1,
+      "n_ground_truths": 9,
+      "n_queries": 9,
+      "n_valid": 3,
+      "n_unique": 7,
+      "n_recovered_gts": 2,
+      "parse_success_count": 9,
+      "parse_success_rate": 1.0,
+      "valid_rate": 0.3333333333333333,
+      "novelty_rate": 0.7777777777777778,
+      "recovery_rate": 0.2222222222222222,
+      "token_usage": {
+        "prompt_tokens": 7420,
+        "completion_tokens": 1469,
+        "total_tokens": 8889
+      },
+      "cost": 0.008889,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        "Layer 1:\n1 1\n0 0\nLayer 2:\n1 0\n0 0",
+        "Layer 1:\n1 0\n1 0\nLayer 2:\n1 0\n0 0\nLayer 3:\n1 0\n1 0",
+        "Layer 1:\n1 0\n1 0\nLayer 2:\n1 0\n0 0",
+        "Layer 1:\n1 0\n1 0\nLayer 2:\n1 0\n0 0",
+        "Layer 1:\n1 1\n1 0\nLayer 2:\n1 0\n0 0",
+        "Layer 1:\n1 0\n1 0\nLayer 2:\n1 0\n1 0",
+        "Layer 1:\n1 0\n1 1\nLayer 2:\n1 0\n0 1",
+        "Layer 1:\n1 1\n1 0\nLayer 2:\n1 0\n0 0",
+        "Layer 1:\n1 1\n0 0\nLayer 2:\n1 0\n1 0"
+      ],
+      "unique_structures": [
+        "Layer 1:\n1 1\n0 0\nLayer 2:\n1 0\n0 0",
+        "Layer 1:\n1 0\n1 0\nLayer 2:\n1 0\n0 0\nLayer 3:\n1 0\n1 0",
+        "Layer 1:\n1 0\n1 0\nLayer 2:\n1 0\n0 0",
+        "Layer 1:\n1 1\n1 0\nLayer 2:\n1 0\n0 0",
+        "Layer 1:\n1 0\n1 0\nLayer 2:\n1 0\n1 0",
+        "Layer 1:\n1 0\n1 1\nLayer 2:\n1 0\n0 1",
+        "Layer 1:\n1 1\n0 0\nLayer 2:\n1 0\n1 0"
+      ]
+    },
+    {
+      "observation_set_id": "g2_h3_b2_005",
+      "n_observations": 1,
+      "n_ground_truths": 9,
+      "n_queries": 9,
+      "n_valid": 1,
+      "n_unique": 7,
+      "n_recovered_gts": 1,
+      "parse_success_count": 9,
+      "parse_success_rate": 1.0,
+      "valid_rate": 0.1111111111111111,
+      "novelty_rate": 0.7777777777777778,
+      "recovery_rate": 0.1111111111111111,
+      "token_usage": {
+        "prompt_tokens": 7512,
+        "completion_tokens": 1146,
+        "total_tokens": 8658
+      },
+      "cost": 0.008658,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        "Layer 1:\n0 1\n0 1\nLayer 2:\n0 1\n0 1",
+        "Layer 1:\n1 1\n0 1\nLayer 2:\n1 0\n1 1\nLayer 3:\n0 1\n0 0",
+        "Layer 1:\n1 1\n0 1\nLayer 2:\n1 0\n1 1\nLayer 3:\n0 1\n0 0",
+        "Layer 1:\n1 1\n0 1\nLayer 2:\n1 1\n1 1\nLayer 3:\n0 1\n0 0",
+        "Layer 1:\n1 1\n0 1\nLayer 2:\n1 1\n0 0",
+        "Layer 1:\n1 1\n1 1\nLayer 2:\n0 1\n1 0\nLayer 3:\n0 0\n1 1",
+        "Layer 1:\n1 1\n0 1\nLayer 2:\n1 0\n1 1\nLayer 3:\n0 1\n1 0",
+        "Layer 1:\n1 1\n0 1\nLayer 2:\n1 1\n1 1\nLayer 3:\n0 1\n0 0",
+        "Layer 1:\n1 1\n1 1\nLayer 2:\n1 1\n0 1\nLayer 3:\n0 1\n0 0"
+      ],
+      "unique_structures": [
+        "Layer 1:\n0 1\n0 1\nLayer 2:\n0 1\n0 1",
+        "Layer 1:\n1 1\n0 1\nLayer 2:\n1 0\n1 1\nLayer 3:\n0 1\n0 0",
+        "Layer 1:\n1 1\n0 1\nLayer 2:\n1 1\n1 1\nLayer 3:\n0 1\n0 0",
+        "Layer 1:\n1 1\n0 1\nLayer 2:\n1 1\n0 0",
+        "Layer 1:\n1 1\n1 1\nLayer 2:\n0 1\n1 0\nLayer 3:\n0 0\n1 1",
+        "Layer 1:\n1 1\n0 1\nLayer 2:\n1 0\n1 1\nLayer 3:\n0 1\n1 0",
+        "Layer 1:\n1 1\n1 1\nLayer 2:\n1 1\n0 1\nLayer 3:\n0 1\n0 0"
+      ]
+    },
+    {
+      "observation_set_id": "g2_h3_b2_006",
+      "n_observations": 1,
+      "n_ground_truths": 9,
+      "n_queries": 9,
+      "n_valid": 1,
+      "n_unique": 9,
+      "n_recovered_gts": 1,
+      "parse_success_count": 9,
+      "parse_success_rate": 1.0,
+      "valid_rate": 0.1111111111111111,
+      "novelty_rate": 1.0,
+      "recovery_rate": 0.1111111111111111,
+      "token_usage": {
+        "prompt_tokens": 7852,
+        "completion_tokens": 1204,
+        "total_tokens": 9056
+      },
+      "cost": 0.009056,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        "Layer 1:\n0 0\n1 1\nLayer 2:\n0 0\n1 1\nLayer 3:\n0 0\n1 1",
+        "Layer 1:\n1 1\n1 1\nLayer 2:\n0 0\n1 1",
+        "Layer 1:\n1 1\n1 0\nLayer 2:\n1 0\n0 0\nLayer 3:\n0 0\n0 1",
+        "Layer 1:\n1 1\n1 1\nLayer 2:\n0 0\n1 1\nLayer 3:\n0 0\n0 1",
+        "Layer 1:\n1 0\n1 1\nLayer 2:\n0 1\n1 0\nLayer 3:\n0 0\n0 1",
+        "Layer 1:\n1 1\n0 1\nLayer 2:\n0 0\n1 1\nLayer 3:\n1 0\n0 0",
+        "Layer 1:\n1 1\n1 0\nLayer 2:\n0 1\n1 1\nLayer 3:\n0 0\n1 0",
+        "Layer 1:\n1 1\n0 1\nLayer 2:\n1 0\n1 1\nLayer 3:\n0 0\n1 0",
+        "Layer 1:\n1 1\n1 0\nLayer 2:\n1 0\n0 0\nLayer 3:\n0 1\n0 1"
+      ],
+      "unique_structures": [
+        "Layer 1:\n0 0\n1 1\nLayer 2:\n0 0\n1 1\nLayer 3:\n0 0\n1 1",
+        "Layer 1:\n1 1\n1 1\nLayer 2:\n0 0\n1 1",
+        "Layer 1:\n1 1\n1 0\nLayer 2:\n1 0\n0 0\nLayer 3:\n0 0\n0 1",
+        "Layer 1:\n1 1\n1 1\nLayer 2:\n0 0\n1 1\nLayer 3:\n0 0\n0 1",
+        "Layer 1:\n1 0\n1 1\nLayer 2:\n0 1\n1 0\nLayer 3:\n0 0\n0 1",
+        "Layer 1:\n1 1\n0 1\nLayer 2:\n0 0\n1 1\nLayer 3:\n1 0\n0 0",
+        "Layer 1:\n1 1\n1 0\nLayer 2:\n0 1\n1 1\nLayer 3:\n0 0\n1 0",
+        "Layer 1:\n1 1\n0 1\nLayer 2:\n1 0\n1 1\nLayer 3:\n0 0\n1 0",
+        "Layer 1:\n1 1\n1 0\nLayer 2:\n1 0\n0 0\nLayer 3:\n0 1\n0 1"
+      ]
+    }
+  ],
+  "total_token_usage": {
+    "prompt_tokens": 54144,
+    "completion_tokens": 9183,
+    "total_tokens": 63327
+  },
+  "total_cost": 0.063327,
+  "all_errors": [],
+  "total_error_counts": {}
+}

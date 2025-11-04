@@ -1,0 +1,17 @@
+llm:
+  teacher:
+    type: deepseek
+    model: "deepseek-chat"
+    api_key: "sk-4b2892631a1b479b8be823381584d883"
+    temperature: 0.6
+
+  student:
+    type: deepseek
+    model: "deepseek-chat"
+    api_key: "sk-4b2892631a1b479b8be823381584d883"
+    temperature: 0.7
+
+benchmark:
+  checkpoint: "checkpoints"
+  verbose: true
+  output_pattern: "results/{dataset_name}_{model}.json"

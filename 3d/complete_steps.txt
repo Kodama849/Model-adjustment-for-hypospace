@@ -1,0 +1,27 @@
+已解决：
+了解了generate-3d-dataset-complete.py的完整流程
+已经尝试过了采用quickstart进行测试
+
+待解决的问题：
+研究测试集怎么传给api（每次传上的内容是什么？是.json分段吗？有内置prompt吗？）
+研究api直接输出是什么，有经过格式化流程吗？我们的程序是如何识别出来的呢？
+
+提示词步骤：
+1. 根据generate-3d-dataset-complete.py，分成具体的步骤，拆分阶段
+2. 设置每一段的设计标准化输出格式，可以用json（参考ML-Homework-思路）
+3. 利用代码，提供/设置案例
+
+偷鸡提示：
+--n-samples调小，则测试轮数减少
+--query-multiplier调大，也就是给模型更多的查询次数，更有可能查到
+
+
+更新后的指令：
+生成测试集（自调参数）：
+python generate_3d_dataset_complete.py --grid-size 3 --max-height 3 --max-blocks 1 --fixed --seed 33550336 --output "datasets/3d_grid3_h3.json"
+
+python generate_3d_dataset_complete.py --grid-size 3 --max-height 3 --max-blocks 2 --fixed --seed 33550436 --output "datasets/3d_grid3_h3.json"
+python generate_3d_dataset_complete.py --grid-size 3 --max-height 3 --max-blocks 2 --seed 33550436 --output "datasets/3d_grid3_h4.json"
+
+调用api进行测试：
+python run_3d_benchmark.py --dataset "datasets/3d_grid3_h3.json" --config "config/config_gpt4o.yaml" --n-samples 10 --query-multiplier 1.0 --seed 33550336

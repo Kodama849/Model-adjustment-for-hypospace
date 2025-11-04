@@ -1,0 +1,62 @@
+{
+  "run_id": "20251103_211042",
+  "llm_name": "DeepSeek(deepseek-chat)",
+  "teacher_llm_name": "DeepSeek(deepseek-chat)",
+  "n_samples": 30,
+  "n_queries_per_sample": null,
+  "query_multiplier": 1.0,
+  "seed": 33550336,
+  "timestamp": "2025-11-03T21:10:52.815341",
+  "results": [
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Expression: NOT x AND y",
+          "teacher_feedback": "Let\u2019s check each observation against the expression **NOT x AND y**:\n\n1. **x=0, y=1**  \n   NOT x = 1 \u2192 1 AND 1 = 1 \u2705 matches output 1.\n\n2. **x=1, y=0**  \n   NOT x = 0 \u2192 0 AND 0 = 0 \u2705 matches output 0.\n\n3. **x=1, y=1**  \n   NOT x = 0 \u2192 0 AND 1 = 0 \u2705 matches output 0.\n\nAll observations match the expression exactly.\n\n**Conclusion:**  \nThe expression **NOT x AND y** is correct for the given data. No changes are needed.",
+          "student_refined": "Expression: NOT x AND y"
+        }
+      ],
+      "observation_set_id": "n3_inputs_01_10_11_outputs_100",
+      "n_observations": 3,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 0,
+      "n_recovered_gts": 0,
+      "parse_success_count": 1,
+      "parse_success_rate": 1.0,
+      "in_space_rate": 0.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        "NOT x AND y"
+      ],
+      "valid_hypotheses": [],
+      "unique_valid_expressions": [],
+      "unique_all_expressions": []
+    }
+  ],
+  "total_token_usage": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0
+  },
+  "total_cost": 0.0,
+  "total_errors": 0,
+  "error_types": {}
+}

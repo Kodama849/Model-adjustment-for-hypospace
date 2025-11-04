@@ -1,0 +1,4153 @@
+{
+  "mode": "teacher_student",
+  "n_samples": 30,
+  "specified_n_queries": null,
+  "actual_n_queries_used": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "results": [
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "From the observations:\n- Perturb(A): A=0, B=0, C=0 → No effect on B or C, so A has no outgoing edges to B or C.\n- Perturb(B): A=1, B=0, C=0 → B must be a cause of A (B→A), since perturbing B sets A to 1 (downstream effect).\n- Perturb(C): A=0, B=0, C=0 → No effect on A or B, so C has no outgoing edges to A or B.\n\nThe only possible edge is B→A.  \nGraph: B->A",
+          "teacher_feedback": "Your analysis is mostly correct but has one important inconsistency.\n\n**Correct reasoning:**\n- Perturb(B) → A=1 means A must be downstream of B (B→A)\n- Perturb(A) → B=0 means B is NOT downstream of A (no A→B edge)\n- Perturb(C) → no effects means C has no outgoing edges\n\n**Inconsistency:** In your proposed graph B→A, perturbing B should make ALL downstream nodes = 1. Since A is downstream of B, perturbing B should make A=1. However, the data shows perturbing B makes A=1, which actually confirms B→A is correct.\n\nWait, let me re-check: Your graph B→A is actually consistent with all observations:\n- Perturb(A): A=0, B=0 ✓ (B not downstream of A)\n- Perturb(B): A=1, B=0 ✓ (A downstream of B)  \n- Perturb(C): A=0, B=0, C=0 ✓ (no edges from C)\n\n**Your graph B→A is correct and explains all observations.** No edits needed.\n\n**Final answer:** ✅ The student's proposed graph B→A is correct and parsimonious.",
+          "student_refined": "Graph: B->A"
+        }
+      ],
+      "observation_set_id": "n3_006",
+      "n_observations": 3,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 1,
+      "n_unique_valid": 1,
+      "n_unique_all": 1,
+      "n_recovered_gts": 1,
+      "parse_success_count": 1,
+      "parse_success_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 1.0,
+      "recovery_rate": 1.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ]
+          ]
+        }
+      ],
+      "valid_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ]
+          ]
+        }
+      ],
+      "unique_graphs": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Graph: A->B, A->C",
+          "teacher_feedback": "Let's check each experiment against the proposed graph `A→B, A→C`.\n\n**Experiment 1: Perturb(A) → A:0 B:1 C:1**  \n- In `A→B, A→C`, perturbing A should make B and C = 1 (since they are downstream).  \n- Matches observation ✅\n\n**Experiment 2: Perturb(B) → A:0 B:0 C:0**  \n- In `A→B, A→C`, B is not an ancestor of A or C, so perturbing B should not affect A or C.  \n- A should remain 0 (not downstream of B), C should remain 0 (not downstream of B).  \n- Matches observation ✅\n\n**Experiment 3: Perturb(C) → A:0 B:0 C:0**  \n- In `A→B, A→C`, C is not an ancestor of A or B, so perturbing C should not affect A or B.  \n- A should remain 0 (not downstream of C), B should remain 0 (not downstream of C).  \n- Matches observation ✅\n\nAll observations are consistent with `A→B, A→C`. No edits needed — the student’s graph is correct.",
+          "student_refined": "Graph: A->B, A->C"
+        }
+      ],
+      "observation_set_id": "n3_017",
+      "n_observations": 3,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 1,
+      "n_unique_valid": 1,
+      "n_unique_all": 1,
+      "n_recovered_gts": 1,
+      "parse_success_count": 1,
+      "parse_success_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 1.0,
+      "recovery_rate": 1.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "C"
+            ]
+          ]
+        }
+      ],
+      "valid_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "C"
+            ]
+          ]
+        }
+      ],
+      "unique_graphs": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "C"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Graph: A->B, C->A, C->B",
+          "teacher_feedback": "Let's check each experiment against the proposed graph `A→B, C→A, C→B`.\n\n**Experiment 1: Perturb(A) → A:0 B:1 C:0**  \n- A=0 (perturbed)  \n- B=1 → B is downstream of A (A→B is consistent)  \n- C=0 → C is not downstream of A (C is not caused by A, consistent)  \n✅ Matches the graph.\n\n**Experiment 2: Perturb(C) → A:1 B:1 C:0**  \n- C=0 (perturbed)  \n- A=1 → A is downstream of C (C→A is consistent)  \n- B=1 → B is downstream of C (C→B is consistent)  \n✅ Matches the graph.\n\nBoth experiments are consistent with the student's graph `A→B, C→A, C→B`.  \nNo edits are needed — the graph is valid.",
+          "student_refined": "Graph: C->A, C->B"
+        },
+        {
+          "query_index": 1,
+          "student_initial": "Graph: A->B, C->A, C->B",
+          "teacher_feedback": "Let's check each experiment against the proposed graph `A→B, C→A, C→B`.\n\n**Experiment 1: Perturb(A) → A:0 B:1 C:0**  \n- A=0: perturbed node.  \n- B=1: B is downstream of A (A→B) → consistent.  \n- C=0: C is not downstream of A (C causes A, not the reverse) → consistent.  \n✅ Matches.\n\n**Experiment 2: Perturb(C) → A:1 B:1 C:0**  \n- C=0: perturbed node.  \n- A=1: A is downstream of C (C→A) → consistent.  \n- B=1: B is downstream of C via both C→B and C→A→B → consistent.  \n✅ Matches.\n\nBoth experiments are consistent with the graph. No edits needed.",
+          "student_refined": "Graph: C->A, C->B"
+        }
+      ],
+      "observation_set_id": "n2_016",
+      "n_observations": 2,
+      "n_ground_truths": 2,
+      "n_queries": 2,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 1,
+      "n_recovered_gts": 0,
+      "parse_success_count": 2,
+      "parse_success_rate": 1.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 0.5,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "C",
+              "A"
+            ],
+            [
+              "C",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "C",
+              "A"
+            ],
+            [
+              "C",
+              "B"
+            ]
+          ]
+        }
+      ],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Graph: C->A, C->B",
+          "teacher_feedback": "Let's check each experiment against the proposed graph `C→A, C→B`.\n\n**Experiment 1: Perturb(A)**  \n- Graph: A has no incoming edges, so perturbing A sets A=0, B=0, C=0.  \n- Observed: A=0, B=0, C=0 ✅ matches.\n\n**Experiment 2: Perturb(B)**  \n- Graph: B has no incoming edges except from C, but perturbing B sets B=0, A=0, C=0.  \n- Observed: A=0, B=0, C=0 ✅ matches.\n\n**Experiment 3: Perturb(C)**  \n- Graph: C→A and C→B means perturbing C sets C=0, A=1, B=1.  \n- Observed: A=1, B=1, C=0 ✅ matches.\n\nAll observations match the proposed graph. No inconsistencies found.\n\n**Conclusion:** The student's graph `C→A, C→B` is correct and explains the data.",
+          "student_refined": "Graph: C->A, C->B"
+        }
+      ],
+      "observation_set_id": "n3_004",
+      "n_observations": 3,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 1,
+      "n_unique_valid": 1,
+      "n_unique_all": 1,
+      "n_recovered_gts": 1,
+      "parse_success_count": 1,
+      "parse_success_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 1.0,
+      "recovery_rate": 1.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "C",
+              "A"
+            ],
+            [
+              "C",
+              "B"
+            ]
+          ]
+        }
+      ],
+      "valid_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "C",
+              "A"
+            ],
+            [
+              "C",
+              "B"
+            ]
+          ]
+        }
+      ],
+      "unique_graphs": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "C",
+              "A"
+            ],
+            [
+              "C",
+              "B"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "From the observations:\n\n- Perturb(B) → A:0, B:0, C:0 means B has no descendants (otherwise C would be 1 if B→C, or A would be 1 if B→A, etc.).\n- Perturb(C) → A:0, B:1, C:0 means C has at least one descendant, and B is a descendant of C (so C→B or C→...→B).\n\nGiven B has no descendants, the only way B is 1 when C is perturbed is if C→B directly.\n\nNo other edges are needed to explain the data:  \n- C→B explains Perturb(C) → B:1.  \n- Perturb(B) → all 0 is consistent with B having no outgoing edges.\n\nGraph: C->B",
+          "teacher_feedback": "Your analysis is mostly correct, but there's one important logical issue.\n\n**Problem:** Your graph C→B cannot explain why B=1 when C is perturbed.\n\n- According to the perturbation semantics: \"A node is 1 if and only if it is a downstream descendant of the perturbed node\"\n- In C→B, when C is perturbed, B should be 0 (not 1) because B is NOT downstream of C - it's upstream of C in the causal direction.\n\n**Correct interpretation:**\n- Perturb(C) → B:1 means B must be downstream of C, so the edge should be B→C\n- This also explains Perturb(B) → C:0 (since C is upstream of B)\n\n**Valid minimal graph:** B→C\n\nThis explains both observations:\n- Perturb(B) → all 0 (B has no descendants)\n- Perturb(C) → B:1, C:0 (B is upstream/direct cause of C)\n\n**Edit:** Reverse C→B to B→C",
+          "student_refined": "Graph: B->C"
+        },
+        {
+          "query_index": 1,
+          "student_initial": "From the observations:\n\n- Perturb(B) → A:0 B:0 C:0 means B has no descendants (otherwise they'd be 1).\n- Perturb(C) → A:0 B:1 C:0 means B is a descendant of C (since B=1 when C is perturbed), but A is not.\n\nSo C → B, and B has no outgoing edges, and A is not a descendant of C or B.\n\nThus the only possible edge is C→B.\n\nGraph: C->B",
+          "teacher_feedback": "Your analysis is mostly correct but incomplete. Let me verify the graph C→B against the observations:\n\n**Perturb(B) → A:0 B:0 C:0**\n- ✓ B=0 (perturbed node)\n- ✓ C=0 (not downstream of B)\n- ✓ A=0 (not downstream of B)\n\n**Perturb(C) → A:0 B:1 C:0**  \n- ✓ C=0 (perturbed node)\n- ✓ B=1 (downstream of C) - consistent with C→B\n- ✓ A=0 (not downstream of C)\n\n**The issue:** Your graph C→B explains the data, but it doesn't account for why A exists in the system. The observations show A is always 0 regardless of perturbations, which means A has no causal relationships with B or C. \n\n**Suggestion:** Your graph should explicitly show A as an isolated node: A, C→B. This makes it clear that A is causally disconnected from the B-C system.\n\nYour causal reasoning about the B-C relationship is correct, but a complete DAG should represent all observed variables.",
+          "student_refined": "Graph: A, C->B"
+        },
+        {
+          "query_index": 2,
+          "student_initial": "From the observations:\n\n- Perturb(B) → A:0 B:0 C:0 means B has no descendants (no edges from B to A or C).\n- Perturb(C) → A:0 B:1 C:0 means when C is perturbed, B is 1, so B must be a descendant of C (C→B).\n\nSince B has no descendants, C→B is the only edge consistent with both observations.\n\nGraph: C->B",
+          "teacher_feedback": "Your analysis is mostly correct but contains one logical inconsistency.\n\n**Correct reasoning:**\n- Perturb(B) → A:0 B:0 C:0 means B has no descendants ✓\n- Perturb(C) → A:0 B:1 C:0 means B must be downstream of C ✓\n\n**The problem:**\nYour graph C→B creates a contradiction. If C→B, then perturbing C should make B=0 (since B is upstream of C, not downstream). But the data shows perturbing C makes B=1.\n\n**Correct interpretation:**\nPerturb(C) → B:1 means B must be downstream of C, so the edge should be C→B. However, this contradicts the rule that perturbed nodes become 0 and only downstream descendants become 1.\n\n**The actual issue:** The data itself appears inconsistent. Perturb(C) making B=1 suggests C→B, but this would mean B is downstream of C, which should make B=0 when C is perturbed, not B=1.\n\n**Your graph C→B is logically consistent with the rules, but the observation data appears to violate the perturbation semantics.**\n\n**Suggestion:** Double-check the observation data. If the data is correct as given, there may be an error in how the perturbation semantics are being applied.",
+          "student_refined": "Graph: No edges"
+        },
+        {
+          "query_index": 3,
+          "student_initial": "From the observations:\n\n- Perturb(B) → A:0 B:0 C:0 means B has no descendants (no outgoing edges to A or C).\n- Perturb(C) → A:0 B:1 C:0 means C is not a descendant of B (since B=1 when C is perturbed, C must be an ancestor of B).\n\nSo C → B is required. No other edges are possible without violating the first observation.\n\nGraph: C->B",
+          "teacher_feedback": "Let's check the student's proposed graph `C → B` against the observations:\n\n**Observation 1: Perturb(B) → A:0 B:0 C:0**\n- In `C → B`, perturbing B means B=0, and C is not downstream of B (correct: C=0), A is unrelated (correct: A=0). ✓\n\n**Observation 2: Perturb(C) → A:0 B:1 C:0**\n- In `C → B`, perturbing C means C=0, and B is downstream of C, so B should be 1. ✓\n\nBoth observations are satisfied. No other edges are supported by the data.\n\n**Conclusion:** The student's graph `C → B` is correct and parsimonious. No changes needed.",
+          "student_refined": "Graph: C->B"
+        }
+      ],
+      "observation_set_id": "n2_022",
+      "n_observations": 2,
+      "n_ground_truths": 4,
+      "n_queries": 4,
+      "n_valid": 1,
+      "n_unique_valid": 1,
+      "n_unique_all": 3,
+      "n_recovered_gts": 1,
+      "parse_success_count": 3,
+      "parse_success_rate": 0.75,
+      "valid_rate": 0.25,
+      "novelty_rate": 0.75,
+      "recovery_rate": 0.25,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [
+        {
+          "query_index": 1,
+          "error_message": "Parsing failed for output: Graph: A, C->B"
+        }
+      ],
+      "error_summary": {
+        "total_errors": 1,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "B",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "C",
+              "B"
+            ]
+          ]
+        }
+      ],
+      "valid_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "C",
+              "B"
+            ]
+          ]
+        }
+      ],
+      "unique_graphs": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "C",
+              "B"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "From the observations:\n\n- Perturb(A): A=0, B=0, C=0 → No node is downstream of A.\n- Perturb(B): A=1, B=0, C=1 → A and C are downstream of B.\n- Perturb(C): A=1, B=0, C=0 → A is downstream of C.\n\nThis means:  \n- B must be an ancestor of A and C.  \n- C must be an ancestor of A.  \n- A is not an ancestor of B or C (since perturbing A affects nothing).  \n- B is not an ancestor of itself, and C is not an ancestor of B (since perturbing B leaves B=0, perturbing C leaves B=0).  \n\nPossible minimal DAG:  \nB → C → A  \nAlso B → A is not needed because C → A already makes A downstream of B via C.  \n\nCheck:  \n- Perturb(A): A=0, B=0, C=0 ✅  \n- Perturb(B): B=0, C=1 (so A=1 via C→A) ✅  \n- Perturb(C): C=0, A=1 ❌ Wait — but if C→A, perturb(C) should make A=0 unless there’s another path from B to A not through C. But we have B→C→A, so perturb(C) breaks the only path from B to A, so A should be 0. But observation says A=1 when C perturbed.  \n\nSo there must be another path from B to A not through C. That means B→A must exist.  \n\nThen: B→A, B→C, C→A.  \nCheck:  \n- Perturb(A): A=0, B=0, C=0 ✅  \n- Perturb(B): B=0, A=1, C=1 ✅  \n- Perturb(C): C=0, A=1 (via B→A) ✅  \n\nGraph: B→A, B→C, C→A.  \n\nBut C→A is redundant for B→A already, but needed for Perturb(B) to make C=1 and A=1, and for Perturb(C) to leave A=1 (since B→A still active). Actually, if C→A exists, perturb(C) would break C→A but B→A still active, so A=1. Works.  \n\nBut C→A is not necessary for observations:  \nTry B→A, B→C:  \n- Perturb(A): A=0, B=0, C=0 ✅  \n- Perturb(B): B=0, A=1, C=1 ✅  \n- Perturb(C): C=0, A=1 (via B→A) ✅  \n\nSo B→A, B→C works and is minimal (2 edges).  \n\nBut Perturb(C) observation says A=1, B=0 — yes, B→A ensures A=1.  \n\nSo minimal DAG: B→A, B→C.  \n\nGraph: B->A, B->C",
+          "teacher_feedback": "Let's check the student's proposed graph **B→A, B→C** against the data:\n\n---\n\n**Perturb(A):**  \nA=0, B=0, C=0 ✅  \nNo edges from A, so B and C unaffected — matches.\n\n**Perturb(B):**  \nB=0, A=1 (via B→A), C=1 (via B→C) ✅  \nMatches observation A=1, B=0, C=1.\n\n**Perturb(C):**  \nC=0, A=1 (via B→A still active) ✅  \nMatches observation A=1, B=0, C=0.\n\n---\n\nNo inconsistencies — the graph explains all observations with minimal edges.  \n**Correct as is.**",
+          "student_refined": "Graph: B->A, B->C"
+        },
+        {
+          "query_index": 1,
+          "student_initial": "From the observations:\n\n- Perturb(A): A=0, B=0, C=0 → No node is downstream of A.\n- Perturb(B): A=1, B=0, C=1 → A and C are downstream of B.\n- Perturb(C): A=1, B=0, C=0 → A is downstream of C.\n\nThis means:  \n- B must be an ancestor of A and C.  \n- C must be an ancestor of A.  \n- A has no outgoing edges (since perturbing A affects nothing else).  \n\nPossible DAG: B → C → A.  \n\nGraph: B->C, C->A",
+          "teacher_feedback": "Let's check the student's proposed graph **B → C → A** against the data:\n\n---\n\n**1. Perturb(A): A=0, B=0, C=0**  \n- In B→C→A, A has no outgoing edges, so perturbing A affects only A (makes it 0), and B and C remain 0. ✅ Consistent.\n\n**2. Perturb(B): A=1, B=0, C=1**  \n- B→C→A means C and A are downstream of B. Perturbing B should make C=1 and A=1. ✅ Consistent.\n\n**3. Perturb(C): A=1, B=0, C=0**  \n- C→A means A is downstream of C. Perturbing C should make A=1 and B unaffected (B=0). ✅ Consistent.\n\n---\n\nAll observations match the graph **B → C → A**.  \nNo inconsistencies, no missing links, no unnecessary edges.\n\n**Conclusion:** ✅ The student’s graph is correct and explains all the data.",
+          "student_refined": "Graph: B->C, C->A"
+        }
+      ],
+      "observation_set_id": "n3_010",
+      "n_observations": 3,
+      "n_ground_truths": 2,
+      "n_queries": 2,
+      "n_valid": 1,
+      "n_unique_valid": 1,
+      "n_unique_all": 2,
+      "n_recovered_gts": 1,
+      "parse_success_count": 2,
+      "parse_success_rate": 1.0,
+      "valid_rate": 0.5,
+      "novelty_rate": 1.0,
+      "recovery_rate": 0.5,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "B",
+              "C"
+            ],
+            [
+              "C",
+              "A"
+            ]
+          ]
+        }
+      ],
+      "valid_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "B",
+              "C"
+            ],
+            [
+              "C",
+              "A"
+            ]
+          ]
+        }
+      ],
+      "unique_graphs": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "B",
+              "C"
+            ],
+            [
+              "C",
+              "A"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Graph: A->B",
+          "teacher_feedback": "Let's check the student's proposed graph `A→B` against the data.\n\n**Perturb(A):**  \n- A=0 (perturbed)  \n- B=0 (B is downstream of A in `A→B`, so B should be 1 — but observed B=0)  \n\nThis is already inconsistent.  \nIf `A→B`, perturbing A should make B=1, but data shows B=0.  \n\n**Perturb(B):**  \n- B=0 (perturbed)  \n- A=1 (A is not downstream of B in `A→B`, so A should be 0 — but observed A=1)  \n\nThis is also inconsistent.  \nIf `A→B`, perturbing B should not affect A (A=0), but data shows A=1.  \n\n---\n\n**Correction:**  \nFrom Perturb(B) → A=1, we know `B→A`.  \nFrom Perturb(A) → B=0, we know B is not downstream of A, so no `A→B`.  \n\nThus the correct graph is `B→A`.  \n\n**Feedback:**  \nYour graph `A→B` is inconsistent with both experiments.  \nReverse the edge: `B→A` fits all observations.",
+          "student_refined": "Graph: B->A"
+        },
+        {
+          "query_index": 1,
+          "student_initial": "Graph: A->B",
+          "teacher_feedback": "Let's check the student's proposed graph `A→B` against the data.\n\n**Perturb(A):**  \n- A=0 (perturbed), B=0, C=0  \n- In `A→B`, B is downstream of A, so perturbing A should make B=1.  \n- But here B=0 → **contradiction**.\n\n**Perturb(B):**  \n- B=0 (perturbed), A=1, C=0  \n- In `A→B`, A is not downstream of B, so perturbing B should make A=0.  \n- But here A=1 → **contradiction**.\n\nThe graph `A→B` fails both experiments.\n\n**Correct graph from data:**  \n- Perturb(B) → A=1 means A is downstream of B → `B→A`.  \n- Perturb(A) → B=0 means B is not downstream of A (consistent with `B→A`).  \n- C=0 in both means C is not connected.\n\n**Suggestion:**  \nReverse the edge: `B→A`",
+          "student_refined": "Graph: B->A"
+        },
+        {
+          "query_index": 2,
+          "student_initial": "Graph: A->B",
+          "teacher_feedback": "Let's check the student's proposed graph `A → B` against the data.\n\n**Perturb(A):**  \n- A=0 (perturbed)  \n- B=0 (B is downstream of A in `A→B`, so B should be 1 — but here B=0)  \n❌ This contradicts rule 1: if `A→B`, perturbing A should make B=1.\n\n**Perturb(B):**  \n- B=0 (perturbed)  \n- A=1 (A is not downstream of B in `A→B`, so A should be 0 — but here A=1)  \n❌ This contradicts rule 2: if `A→B`, perturbing B should make A=0.\n\nThe graph `A→B` fails both experiments.\n\n**Correct graph from data:**  \n- Perturb(B) → A=1 means A is downstream of B (`B→A`).  \n- Perturb(A) → B=0 means B is not downstream of A (no `A→B`).  \n\nSo the correct DAG is `B → A`.\n\n**Feedback:**  \nYour graph `A→B` is incorrect.  \nChange it to `B → A` to match the data.",
+          "student_refined": "Graph: B->A"
+        },
+        {
+          "query_index": 3,
+          "student_initial": "Graph: A->B",
+          "teacher_feedback": "Let's check the student's proposed graph `A→B` against the data.\n\n**Perturb(A):**  \n- A=0 (perturbed), B=0, C=0.  \n- In `A→B`, B is downstream of A, so perturbing A should make B=1.  \n- But here B=0. ❌ **Contradiction** — B should be 1 if A→B.\n\n**Perturb(B):**  \n- B=0 (perturbed), A=1, C=0.  \n- In `A→B`, A is not downstream of B, so perturbing B should make A=0.  \n- But here A=1. ❌ **Contradiction** — A should be 0 if A→B.\n\nBoth experiments contradict `A→B`.  \n\nFrom Perturb(B) → A=1, we know A must be downstream of B (`B→A`).  \nFrom Perturb(A) → B=0, we know B is not downstream of A (no A→B).  \n\n**Correct graph:** `B→A` (no other edges).  \n\n**Suggestion:** Reverse the edge: `B→A`.",
+          "student_refined": "Graph: B->A"
+        }
+      ],
+      "observation_set_id": "n2_003",
+      "n_observations": 2,
+      "n_ground_truths": 4,
+      "n_queries": 4,
+      "n_valid": 4,
+      "n_unique_valid": 1,
+      "n_unique_all": 1,
+      "n_recovered_gts": 1,
+      "parse_success_count": 4,
+      "parse_success_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 0.25,
+      "recovery_rate": 0.25,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ]
+          ]
+        }
+      ],
+      "valid_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ]
+          ]
+        }
+      ],
+      "unique_graphs": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "From the observations:\n\n- Perturb(B) → A:1 B:0 C:1 means:  \n  A and C are downstream of B (so B→A and B→C, or B→something→A, etc.).\n\n- Perturb(C) → A:0 B:0 C:0 means:  \n  C has no descendants at all.\n\nSince C has no descendants, B→C is impossible (otherwise perturbing B would make C=1, which is observed, but that would mean C is a descendant of B, so perturbing C would make C=0, which is fine — but wait, if B→C, then C is a descendant of B, but C=0 when C is perturbed, that’s fine. But if C has no descendants, then C cannot be an ancestor of A or B, so edges from C are impossible.)\n\nActually, let's check:  \nPerturb(C) → A:0 B:0 C:0 means:  \nC is perturbed to 0, and no other node is 1, so C is not an ancestor of A or B. So no edges from C to A or B.\n\nFrom Perturb(B) → A:1 C:1:  \nB is ancestor of A and C. So B→A or B→...→A, and B→C or B→...→C.\n\nBut C has no descendants, so B→C is possible (C is a direct child of B).  \nAlso, B→A is possible, or B→C→A is impossible because C has no outgoing edges.\n\nSo simplest: B→A and B→C.\n\nCheck:  \nPerturb(B): B=0, A=1 (B→A), C=1 (B→C) ✓  \nPerturb(C): C=0, A=0 (no path from C to A), B=0 (no path from C to B) ✓  \n\nGraph: B→A, B→C\n\nGraph: B->A, B->C",
+          "teacher_feedback": "Your proposed graph (B→A, B→C) correctly explains all observations:\n\n- **Perturb(B) → A:1 B:0 C:1**: Consistent with both A and C being downstream of B\n- **Perturb(C) → A:0 B:0 C:0**: Consistent with C having no outgoing edges (no descendants)\n\nThe graph is both valid and parsimonious - it contains only the necessary edges to explain the data. No edits are needed.\n\n**Correct ✓**",
+          "student_refined": "Graph: B->A, B->C"
+        },
+        {
+          "query_index": 1,
+          "student_initial": "From the observations:\n\n- Perturb(B) → A:1 B:0 C:1 means:  \n  A and C are downstream of B, so B must be an ancestor of A and C.  \n  This implies at least B→A or B→C or both, possibly with intermediate nodes.\n\n- Perturb(C) → A:0 B:0 C:0 means:  \n  C has no descendants (since C=0 and nothing else is 1), so C has no outgoing edges.\n\nSince C has no outgoing edges, the only way for B to affect A and C is:\n- B→A and B→C, or\n- B→A and A→C, or\n- B→C and C→A (but C→A is impossible because C has no outgoing edges), or\n- B→A and B→C and A→C, etc.\n\nBut Perturb(C) → A:0 means A is not downstream of C, so no path from C to A exists.  \nThus, B must directly point to both A and C, or B→A and A→C, but then A would be 1 in Perturb(C) if A→C? Wait, no: Perturb(C) means C is fixed to 0, so even if A→C, A is not downstream of C, so A=0 is fine. But then in Perturb(B), if B→A→C, then A=1 and C=1, which matches the first observation.  \n\nLet’s check:  \nGraph B→A→C:  \nPerturb(B): B=0, A=1 (B→A), C=1 (A→C) → matches A:1 B:0 C:1.  \nPerturb(C): C=0, no outgoing edges so A=0, B=0 → matches A:0 B:0 C:0.  \n\nThis works and uses 2 edges.  \n\nAnother possibility: B→A and B→C directly:  \nPerturb(B): B=0, A=1, C=1 → matches.  \nPerturb(C): C=0, no effect on A or B → matches.  \n\nBoth are valid. But the constraint says at most 3 edges, so both are fine.  \n\nLet’s pick the minimal one: B→A→C.  \n\nGraph: B->A, A->C",
+          "teacher_feedback": "Your proposed graph B→A→C is logically consistent with the observations:\n\n- **Perturb(B)**: B=0 → A=1 (B→A) → C=1 (A→C) ✓ matches A:1 B:0 C:1\n- **Perturb(C)**: C=0 → no outgoing edges → A=0, B=0 ✓ matches A:0 B:0 C:0\n\nThe graph correctly explains all observations with minimal edges. No edits needed - your reasoning and solution are correct.",
+          "student_refined": "Graph: B->A, A->C"
+        },
+        {
+          "query_index": 2,
+          "student_initial": "From the observations:\n\n- Perturb(B) → A:1 B:0 C:1 means A and C are downstream of B.\n- Perturb(C) → A:0 B:0 C:0 means C has no descendants.\n\nSo B must be an ancestor of A and C, but C cannot be an ancestor of A or B.  \nA possible minimal DAG: B→A and B→C.\n\nGraph: B->A, B->C",
+          "teacher_feedback": "Let's check the student's proposed graph (B→A, B→C) against the observations:\n\n**Perturb(B):**\n- B=0 (perturbed)\n- A=1 → consistent with B→A (A downstream of B)\n- C=1 → consistent with B→C (C downstream of B)\n✓ This experiment matches\n\n**Perturb(C):**\n- C=0 (perturbed)\n- A=0 → consistent (no path from C to A in the graph)\n- B=0 → consistent (no path from C to B in the graph)\n✓ This experiment matches\n\nThe graph B→A, B→C explains all observations correctly. No inconsistencies found.\n\n**Conclusion:** The student's proposed graph is valid and minimal. Good work!",
+          "student_refined": "Graph: B->A, B->C"
+        }
+      ],
+      "observation_set_id": "n2_029",
+      "n_observations": 2,
+      "n_ground_truths": 3,
+      "n_queries": 3,
+      "n_valid": 3,
+      "n_unique_valid": 2,
+      "n_unique_all": 2,
+      "n_recovered_gts": 2,
+      "parse_success_count": 3,
+      "parse_success_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 0.6666666666666666,
+      "recovery_rate": 0.6666666666666666,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ],
+            [
+              "A",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        }
+      ],
+      "valid_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ],
+            [
+              "A",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        }
+      ],
+      "unique_graphs": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ],
+            [
+              "A",
+              "C"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Graph: A->B",
+          "teacher_feedback": "Let's check each experiment against the proposed graph `A→B`:\n\n**Experiment 1: Perturb(A)**  \n- Graph says: A→B  \n- Perturbing A should make A=0, B=1 (since B is downstream of A)  \n- Observed: A=0, B=1, C=0 ✅ matches  \n\n**Experiment 2: Perturb(B)**  \n- Graph says: B has no outgoing edges  \n- Perturbing B should make B=0, A=0 (since A is not downstream of B)  \n- Observed: A=0, B=0, C=0 ✅ matches  \n\n**Experiment 3: Perturb(C)**  \n- Graph says: C is not in the graph (no incoming/outgoing edges)  \n- Perturbing C should make C=0, A=0, B=0 (since A and B are not downstream of C)  \n- Observed: A=0, B=0, C=0 ✅ matches  \n\nAll observations are consistent with `A→B`. No edits needed.",
+          "student_refined": "Graph: A->B"
+        }
+      ],
+      "observation_set_id": "n3_014",
+      "n_observations": 3,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 1,
+      "n_unique_valid": 1,
+      "n_unique_all": 1,
+      "n_recovered_gts": 1,
+      "parse_success_count": 1,
+      "parse_success_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 1.0,
+      "recovery_rate": 1.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ]
+          ]
+        }
+      ],
+      "valid_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ]
+          ]
+        }
+      ],
+      "unique_graphs": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Graph: A->C, B->A, B->C",
+          "teacher_feedback": "Let’s check each experiment against the proposed graph **A→C, B→A, B→C**.\n\n---\n\n**1. Perturb(A)**  \n- Graph: A→C, B→A, B→C  \n- Perturb A ⇒ A=0.  \n- Downstream of A: C (A→C). So C=1.  \n- B is not downstream of A (B→A means A is not an ancestor of B), so B=0.  \n- Observed: A=0, B=0, C=1 ✅ matches.\n\n---\n\n**2. Perturb(B)**  \n- Perturb B ⇒ B=0.  \n- Downstream of B: A (B→A) and C (B→C, also B→A→C). So A=1, C=1.  \n- Observed: A=1, B=0, C=1 ✅ matches.\n\n---\n\n**3. Perturb(C)**  \n- Perturb C ⇒ C=0.  \n- Downstream of C: none (no edges from C). So A=0, B=0.  \n- Observed: A=0, B=0, C=0 ✅ matches.\n\n---\n\nAll three experiments match the graph **A→C, B→A, B→C**.\n\n**Conclusion:** The student’s graph is **correct** and explains the data.  \nNo edits needed.",
+          "student_refined": "Graph: B->A, A->C"
+        },
+        {
+          "query_index": 1,
+          "student_initial": "Graph: A->C, B->A, B->C",
+          "teacher_feedback": "Let's check each experiment against the proposed graph `A→C, B→A, B→C`.\n\n**Experiment 1: Perturb(A) → A:0, B:0, C:1**  \n- Perturbing A sets A=0.  \n- Downstream of A: C (via A→C) → C=1.  \n- B is not downstream of A → B=0.  \n✅ Matches.\n\n**Experiment 2: Perturb(B) → A:1, B:0, C:1**  \n- Perturbing B sets B=0.  \n- Downstream of B: A (via B→A) → A=1.  \n- Downstream of B: C (via B→C) → C=1.  \n✅ Matches.\n\n**Experiment 3: Perturb(C) → A:0, B:0, C:0**  \n- Perturbing C sets C=0.  \n- A is not downstream of C → A=0.  \n- B is not downstream of C → B=0.  \n✅ Matches.\n\nAll observations are consistent with the graph `A→C, B→A, B→C`.  \nNo edits are needed — the student’s graph is correct.",
+          "student_refined": "Graph: A->C, B->A, B->C"
+        }
+      ],
+      "observation_set_id": "n3_013",
+      "n_observations": 3,
+      "n_ground_truths": 2,
+      "n_queries": 2,
+      "n_valid": 2,
+      "n_unique_valid": 2,
+      "n_unique_all": 2,
+      "n_recovered_gts": 2,
+      "parse_success_count": 2,
+      "parse_success_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 1.0,
+      "recovery_rate": 1.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ],
+            [
+              "A",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "B",
+              "A"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        }
+      ],
+      "valid_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ],
+            [
+              "A",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "B",
+              "A"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        }
+      ],
+      "unique_graphs": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ],
+            [
+              "A",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "B",
+              "A"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Graph: No edges",
+          "teacher_feedback": "Let's analyze the observation:\n\n**Perturb(B) → A:0 B:0 C:0**\n\nAccording to the rules:\n- B=0 is expected (perturbed node is always 0)\n- A=0 means A is NOT downstream of B\n- C=0 means C is NOT downstream of B\n\n**Analysis of student's graph (no edges):**\n- With no edges, perturbing B should only affect B itself\n- A and C should remain at 0 since they have no causal connection to B\n- This perfectly matches the observation: A=0, B=0, C=0\n\n**Conclusion:** The student's proposed graph with no edges correctly explains the observation. No edits needed.\n\n**Feedback:** ✓ Your graph is correct and parsimonious. It explains the data perfectly - with no causal connections, perturbing B only affects B itself.",
+          "student_refined": "Graph: No edges"
+        },
+        {
+          "query_index": 1,
+          "student_initial": "Graph: No edges",
+          "teacher_feedback": "Let's analyze this step by step.\n\n**Observation:**  \nPerturb(B) → A:0, B:0, C:0  \n\n**Rules applied:**  \n- Perturbed node B is 0.  \n- If there were any edges B→A or B→C, then A or C would be 1 (since they'd be downstream of B).  \n- Here, A=0 and C=0 means neither A nor C is downstream of B.  \n\n**Student's graph:** No edges.  \n- This means perturbing B affects only B (makes it 0), and A and C remain 0 (since no causal links).  \n- This matches the observation perfectly.  \n\n**Conclusion:**  \nThe student's graph is consistent with the data. No changes needed.  \n\n**Feedback:**  \n✅ Your graph correctly explains the data: perturbing B leaves A and C unaffected (0), which matches the no-edge structure.",
+          "student_refined": "Graph: No edges"
+        },
+        {
+          "query_index": 2,
+          "student_initial": "Graph: No edges",
+          "teacher_feedback": "Let's analyze this step by step.\n\n**Observation:**\n- Perturb(B) → A:0, B:0, C:0\n\n**Student's graph:** No edges\n\n**Analysis:**\n- Perturbing B makes B=0 (expected for perturbed node)\n- A=0 means A is NOT downstream of B\n- C=0 means C is NOT downstream of B\n- With no edges in the graph, no node is downstream of any other node\n- Therefore, perturbing any node should make all other nodes 0, which matches the observation\n\n**Conclusion:**\nThe student's graph (no edges) correctly explains this single observation. No changes are needed based on the available data.\n\n**Feedback:**\n✓ Your graph correctly explains the observation. With no causal relationships, perturbing B affects only B itself, leaving A and C at 0.",
+          "student_refined": "Graph: No edges"
+        },
+        {
+          "query_index": 3,
+          "student_initial": "Graph: No edges",
+          "teacher_feedback": "Let's analyze this step by step.\n\n**Observation:**  \nPerturb(B) → A:0, B:0, C:0  \n\n**Rules applied:**  \n- Perturbed node B is 0.  \n- If there were any edges B→A or B→C, then A or C would be 1 (since they'd be downstream of B).  \n- Here, A=0 and C=0, so neither A nor C is downstream of B.  \n\n**Student's graph:** No edges.  \n\n**Check:**  \nNo edges means no downstream nodes from B, so A=0 and C=0 is exactly what we expect.  \n\n✅ The student's graph is consistent with the data.  \n\n**Conclusion:**  \nThe graph with no edges correctly explains the observation. No changes needed.",
+          "student_refined": "Graph: No edges"
+        },
+        {
+          "query_index": 4,
+          "student_initial": "Graph: No edges",
+          "teacher_feedback": "Let's analyze this step by step.\n\n**Observation:**  \nPerturb(B) → A:0, B:0, C:0  \n\n**Rules applied:**  \n- Perturbed node B is 0.  \n- If there were any edges B → A or B → C, then A or C would be 1 (since they'd be downstream of B).  \n- Here, A=0 and C=0 means neither A nor C is downstream of B.  \n\n**Student's graph:** No edges.  \n\n**Check:**  \nNo edges means perturbing B affects only B (makes it 0), and A and C remain 0 (since they are not descendants of B). This matches the data perfectly.  \n\n**Conclusion:**  \nThe student's graph is consistent with the given perturbation experiment. No changes needed.",
+          "student_refined": "Graph: No edges"
+        },
+        {
+          "query_index": 5,
+          "student_initial": "Graph: No edges",
+          "teacher_feedback": "Let's analyze this step by step.\n\n**Observation:**\n- Perturb(B) → A:0, B:0, C:0\n\n**Rules applied:**\n- When B is perturbed, B=0 (perturbed node is always 0)\n- A=0 means A is NOT downstream of B\n- C=0 means C is NOT downstream of B\n\n**Student's graph:** No edges (A, B, C are all independent)\n\n**Analysis:**\n- With no edges, perturbing B should only affect B (making it 0)\n- A and C should remain at their natural state, but the data shows A=0 and C=0\n- Since perturbation experiments show the system state AFTER perturbation, and with no causal links, we'd expect the natural states of A and C to be preserved\n- However, the observation shows A=0 and C=0, which is consistent with the student's graph if the natural states of A and C are 0\n\n**Conclusion:** The student's graph (no edges) is consistent with this single observation. No edits are needed based on the available data.\n\n**Feedback:** Your graph correctly explains the observation. With no causal relationships, perturbing B only affects B itself, and A and C remain at their natural states (which appear to be 0).",
+          "student_refined": "Graph: No edges"
+        },
+        {
+          "query_index": 6,
+          "student_initial": "Graph: No edges",
+          "teacher_feedback": "Let's analyze this step by step.\n\n**Observation:**  \nPerturb(B) → A:0, B:0, C:0  \n\n**Rules applied:**  \n- Perturbed node B is 0.  \n- If B had any downstream effects, those nodes would be 1.  \n- Here, A=0 and C=0 means A and C are **not** downstream of B.  \n\n**Student's graph:** No edges.  \n\n**Check:**  \n- B has no children → perturbing B affects only B (makes it 0), and no other nodes are forced to 1.  \n- A and C remain 0, consistent with no causal links from B.  \n\n✅ The student's graph (no edges) is consistent with the single observation.  \n\n**Conclusion:**  \nYour graph correctly explains the data. No changes needed.",
+          "student_refined": "Graph: No edges"
+        },
+        {
+          "query_index": 7,
+          "student_initial": "Graph: No edges",
+          "teacher_feedback": "Let's analyze this step by step.\n\n**Observation:**  \nPerturb(B) → A:0, B:0, C:0  \n\n**Rules applied:**  \n- Perturbed node B is 0.  \n- A node is 1 only if it is a *downstream* descendant of B.  \n- Here, A=0, C=0 means neither A nor C is downstream of B.  \n\n**Student's graph:** No edges.  \n\n**Check:**  \n- No edges means no node is downstream of B.  \n- So perturbing B should leave A=0, B=0, C=0.  \n- This matches the observation exactly.  \n\n**Conclusion:**  \nThe student's graph is consistent with the given data. No changes needed.  \n\n**Feedback:**  \n✅ Your graph correctly explains the data: with no edges, perturbing B affects no other nodes, matching the observation.",
+          "student_refined": "Graph: No edges"
+        },
+        {
+          "query_index": 8,
+          "student_initial": "Graph: No edges",
+          "teacher_feedback": "Let's analyze this step by step.\n\n**Observation:**\n- Perturb(B) → A:0, B:0, C:0\n\n**Student's graph:** No edges (A, B, C are all independent)\n\n**Analysis:**\n- When B is perturbed, B=0 (expected for perturbed node)\n- A=0 and C=0 means neither A nor C is downstream of B\n- In a graph with no edges, perturbing B should only affect B, leaving A and C at their natural state\n- However, the data shows A=0 and C=0, which is consistent with no edges because:\n  - With no causal paths from B to A or C, perturbing B shouldn't change A or C\n  - The observation A=0, C=0 could simply mean A and C's natural state is 0\n\n**Conclusion:** The student's graph (no edges) is consistent with this single observation. No evidence requires adding edges.\n\n**Feedback:** ✓ Your graph correctly explains the observation. With only this perturbation experiment, no edges are necessary.",
+          "student_refined": "Graph: No edges"
+        },
+        {
+          "query_index": 9,
+          "student_initial": "Graph: No edges",
+          "teacher_feedback": "Let's analyze the observation:\n\n**Perturb(B) → A:0 B:0 C:0**\n\nAccording to the rules:\n- B=0 is expected (perturbed node is always 0)\n- A=0 means A is NOT downstream of B\n- C=0 means C is NOT downstream of B\n\n**Analysis of student's graph (no edges):**\n- With no edges, perturbing B should only affect B itself\n- A and C should remain at 0 since they have no causal connection to B\n- This perfectly matches the observation: A=0, B=0, C=0\n\n**Conclusion:** The student's proposed graph with no edges correctly explains the observation. No edits are needed.\n\n**Feedback:** ✓ Your graph is correct and parsimonious. The observation shows no downstream effects from perturbing B, which is exactly what we'd expect with no causal connections between the nodes.",
+          "student_refined": "Graph: No edges"
+        },
+        {
+          "query_index": 10,
+          "student_initial": "Graph: No edges",
+          "teacher_feedback": "Let's analyze this systematically:\n\n**Observation:** Perturb(B) → A:0, B:0, C:0\n\n**Your proposed graph:** No edges (A, B, C are all independent)\n\n**Analysis:**\n- When B is perturbed, all nodes are 0\n- This is perfectly consistent with your graph: if there are no causal relationships, perturbing B should only affect B (making it 0), and all other nodes should remain at their baseline state of 0\n- No evidence suggests any causal relationships exist between these nodes\n\n**Conclusion:** Your graph correctly explains the observation. With no edges, perturbing any single node should only affect that node itself, leaving all others at 0, which matches the data.\n\n✅ **Your graph is correct and parsimonious.** No changes needed.",
+          "student_refined": "Graph: No edges"
+        },
+        {
+          "query_index": 11,
+          "student_initial": "Graph: No edges",
+          "teacher_feedback": "Let's analyze this step by step.\n\n**Observation:**  \nPerturb(B) → A:0, B:0, C:0  \n\n**Rules applied:**  \n- Perturbed node B = 0 (by definition).  \n- A = 0 means A is **not** a downstream descendant of B.  \n- C = 0 means C is **not** a downstream descendant of B.  \n\n**Student's graph:** No edges.  \n\n**Check:**  \nIf there are no edges, perturbing B affects only B (no descendants), so A=0, B=0, C=0 is exactly what we expect.  \n\n✅ The student's graph is consistent with the data.  \n\n**Conclusion:**  \nYour graph correctly explains the observation. No changes needed.",
+          "student_refined": "Graph: No edges"
+        }
+      ],
+      "observation_set_id": "n1_005",
+      "n_observations": 1,
+      "n_ground_truths": 12,
+      "n_queries": 12,
+      "n_valid": 12,
+      "n_unique_valid": 1,
+      "n_unique_all": 1,
+      "n_recovered_gts": 1,
+      "parse_success_count": 12,
+      "parse_success_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 0.08333333333333333,
+      "recovery_rate": 0.08333333333333333,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        }
+      ],
+      "valid_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        }
+      ],
+      "unique_graphs": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        }
+      ]
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "From the observations:\n\n- Perturb(B) → A:0 B:0 C:0 means B has no causal effect on A or C.\n- Perturb(C) → A:1 B:0 C:0 means C causes A (since perturbing C sets C to 0, but A is 1, so C must inhibit A in normal operation, but here \"1\" means downstream descendant of perturbed node — wait, that doesn't match: if C is perturbed to 0, and A is 1, then A must be a descendant of C in the causal graph, so C→A).\n\nBut Perturb(B) → A:0 B:0 C:0 means B is not an ancestor of A or C, so no edges from B to A or C.\n\nPerturb(C) → A:1 B:0 C:0 means C→A (since perturbing C makes C 0, but A=1 means A is downstream of C).\n\nAlso, B:0 in Perturb(C) means C is not ancestor of B.\n\nSo possible edges: C→A only? But then Perturb(C) → A:1 B:0 C:0 is satisfied. But Perturb(B) → A:0 B:0 C:0 is satisfied if B has no outgoing edges.\n\nBut maybe A→B? That would make B downstream of A, but Perturb(B) → A:0 means A is not downstream of B, so A→B is possible. But then Perturb(C) → A:1 means C→A, so A=1, but B=0 even though A→B? That means perturbing C sets C=0, A=1 (since C→A), but B=0 even though A→B? That violates the rule: \"A node is 1 if it is a downstream descendant of the perturbed node.\" If C→A→B, then perturbing C should make A=1 and B=1 (since B is downstream of C). But observation says B=0. So no path C→...→B. So A→B cannot exist if C→A exists.\n\nSo only C→A is possible.\n\nCheck: C→A only. Perturb(B): B=0, A=0 (since no B→A), C=0 (since no B→C). Perturb(C): C=0, A=1 (since C→A), B=0 (since no C→B). Works.\n\nGraph: C→A\n\nGraph: C->A",
+          "teacher_feedback": "Your analysis is mostly correct, but there's one important logical issue:\n\n**Problem with your reasoning:**\nYou correctly identified that C→A is required (since perturbing C makes A=1). However, you concluded \"C→A only\" is the complete graph.\n\nBut consider: If C→A is the only edge, then perturbing C should make A=1 (✓ matches observation), but what about the baseline/normal state? With only C→A, there's no explanation for how A could ever be 0 in normal operation.\n\n**The correct minimal graph that explains all observations:**\n```\nA → B\nC → A\n```\n\n**Validation:**\n- Perturb(B): B=0, A=0 (A not downstream of B), C=0 (C not downstream of B) ✓\n- Perturb(C): C=0, A=1 (A downstream of C), B=0 (B not downstream of C) ✓\n\nThe A→B edge is necessary to explain the system's normal behavior and doesn't conflict with any observations. Your graph was too minimal - it explained the perturbation results but not the underlying causal structure.",
+          "student_refined": "Graph: A->B, C->A"
+        }
+      ],
+      "observation_set_id": "n2_023",
+      "n_observations": 2,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 0,
+      "n_unique_valid": 0,
+      "n_unique_all": 1,
+      "n_recovered_gts": 0,
+      "parse_success_count": 1,
+      "parse_success_rate": 1.0,
+      "valid_rate": 0.0,
+      "novelty_rate": 1.0,
+      "recovery_rate": 0.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "C",
+              "A"
+            ]
+          ]
+        }
+      ],
+      "valid_hypotheses": [],
+      "unique_graphs": []
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Graph: C->A, C->B",
+          "teacher_feedback": "Let's check the student's graph `C → A, C → B` against the data.\n\n---\n\n**1. Perturb(A):**  \n- A=0 (perturbed), B=0, C=0.  \n- In the graph, A has no outgoing edges, so perturbing A should not affect B or C.  \n- This matches: B=0, C=0. ✅\n\n---\n\n**2. Perturb(C):**  \n- C=0 (perturbed), A=1, B=1.  \n- In the graph, C → A and C → B, so perturbing C should make A=1 and B=1 (since they are downstream of C).  \n- This matches: A=1, B=1. ✅\n\n---\n\n**Conclusion:**  \nThe graph `C → A, C → B` explains both experiments perfectly. No changes needed.\n\n**Feedback:**  \nYour graph is correct and consistent with the data. Well done.",
+          "student_refined": "Graph: C->A, C->B"
+        },
+        {
+          "query_index": 1,
+          "student_initial": "Graph: C->A, C->B",
+          "teacher_feedback": "Let's check your proposed graph `C → A, C → B` against the data.\n\n**Experiment 1: Perturb(A) → A:0, B:0, C:0**  \n- In your graph, A has no children, so perturbing A should only affect A (set to 0), and B and C should be 0.  \n- This matches the data: B=0, C=0. ✅\n\n**Experiment 2: Perturb(C) → A:1, B:1, C:0**  \n- In your graph, C → A and C → B, so perturbing C should make A=1 and B=1 (since they are downstream of C).  \n- This matches the data: A=1, B=1. ✅\n\nBoth experiments are consistent with your graph. No changes are needed — your DAG explains the observations perfectly.",
+          "student_refined": "Graph: C->A, C->B"
+        },
+        {
+          "query_index": 2,
+          "student_initial": "Graph: C->A, C->B",
+          "teacher_feedback": "Let’s check the student’s graph `C → A, C → B` against the data.\n\n---\n\n**Experiment 1: Perturb(A)**  \n- Observed: A=0, B=0, C=0  \n- In the graph:  \n  - A has no parents, so perturbing A sets A=0.  \n  - B and C are not descendants of A, so they remain 0.  \n✅ Matches.\n\n---\n\n**Experiment 2: Perturb(C)**  \n- Observed: A=1, B=1, C=0  \n- In the graph:  \n  - C → A means A is downstream of C → A should be 1 when C is perturbed. ✅  \n  - C → B means B is downstream of C → B should be 1 when C is perturbed. ✅  \n  - C itself is 0 because it’s perturbed. ✅  \n✅ Matches.\n\n---\n\n**Conclusion:**  \nThe graph `C → A, C → B` explains both experiments perfectly. No changes needed.",
+          "student_refined": "Graph: C->A, C->B"
+        }
+      ],
+      "observation_set_id": "n2_008",
+      "n_observations": 2,
+      "n_ground_truths": 3,
+      "n_queries": 3,
+      "n_valid": 3,
+      "n_unique_valid": 1,
+      "n_unique_all": 1,
+      "n_recovered_gts": 1,
+      "parse_success_count": 3,
+      "parse_success_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 0.3333333333333333,
+      "recovery_rate": 0.3333333333333333,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "C",
+              "A"
+            ],
+            [
+              "C",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "C",
+              "A"
+            ],
+            [
+              "C",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "C",
+              "A"
+            ],
+            [
+              "C",
+              "B"
+            ]
+          ]
+        }
+      ],
+      "valid_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "C",
+              "A"
+            ],
+            [
+              "C",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "C",
+              "A"
+            ],
+            [
+              "C",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "C",
+              "A"
+            ],
+            [
+              "C",
+              "B"
+            ]
+          ]
+        }
+      ],
+      "unique_graphs": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "C",
+              "A"
+            ],
+            [
+              "C",
+              "B"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Graph: C->A",
+          "teacher_feedback": "Let's analyze this step by step.\n\n**Observation:**\n- Perturb(C) → A:1, B:0, C:0\n\n**Student's graph:** C→A\n\n**Analysis:**\n- Perturbing C makes C=0 (perturbed node)\n- A=1 means A must be downstream of C (rule 3) ✓ This matches C→A\n- B=0 means B is not downstream of C ✓ This matches no connection from C to B\n\n**Conclusion:**\nThe student's graph C→A perfectly explains the observation. No inconsistencies found.\n\n✅ **Correct as is.** The graph explains why perturbing C affects A but not B.",
+          "student_refined": "Graph: C->A"
+        },
+        {
+          "query_index": 1,
+          "student_initial": "Graph: C->A",
+          "teacher_feedback": "Let's analyze this step by step.\n\n**Observation:**  \nPerturb(C) → A:1, B:0, C:0  \n\n**Student's graph:** C → A  \n\n**Check:**  \n- Perturbing C means C=0.  \n- A=1 means A is downstream of C → yes, C→A matches this.  \n- B=0 means B is not downstream of C → yes, B is not in the graph, so B=0 is consistent.  \n- C=0 because it's the perturbed node → consistent.  \n\nNo contradictions. The graph explains the data.  \n\n**Conclusion:**  \n✅ The graph `C → A` is consistent with the observation. No edits needed.",
+          "student_refined": "Graph: C->A"
+        },
+        {
+          "query_index": 2,
+          "student_initial": "Graph: C->A",
+          "teacher_feedback": "Let's analyze this step by step.\n\n**Observation:**  \nPerturb(C) → A:1, B:0, C:0  \n\n**Student's graph:** C → A  \n\n**Check:**  \n- Perturbing C sets C=0.  \n- A is downstream of C (C→A), so A=1.  \n- B is not downstream of C, so B=0.  \n\nAll observed values match the graph's predictions.  \n\n✅ **The student's graph is correct and explains the data.**  \n\nNo edits needed.",
+          "student_refined": "Graph: C->A"
+        },
+        {
+          "query_index": 3,
+          "student_initial": "Graph: C->A",
+          "teacher_feedback": "Let's analyze this step by step.\n\n**Observation:**\n- Perturb(C) → A:1, B:0, C:0\n\n**Student's graph:** C → A\n\n**Analysis:**\n- Perturbing C makes C=0 (rule: perturbed node is 0)\n- A=1 means A must be downstream of C (rule 3) ✓ This matches C→A\n- B=0 means B is not downstream of C ✓ This matches the graph (no connection to B)\n\n**Conclusion:**\nThe student's graph C→A correctly explains the observation. No edits needed.\n\n✅ **Correct** - The graph is consistent with the perturbation data.",
+          "student_refined": "Graph: C->A"
+        }
+      ],
+      "observation_set_id": "n1_011",
+      "n_observations": 1,
+      "n_ground_truths": 4,
+      "n_queries": 4,
+      "n_valid": 4,
+      "n_unique_valid": 1,
+      "n_unique_all": 1,
+      "n_recovered_gts": 1,
+      "parse_success_count": 4,
+      "parse_success_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 0.25,
+      "recovery_rate": 0.25,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "C",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "C",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "C",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "C",
+              "A"
+            ]
+          ]
+        }
+      ],
+      "valid_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "C",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "C",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "C",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "C",
+              "A"
+            ]
+          ]
+        }
+      ],
+      "unique_graphs": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "C",
+              "A"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Graph: A->B, A->C",
+          "teacher_feedback": "Looking at the observation:\n\nPerturb(A) → A:0, B:1, C:1\n\nIn the student's proposed graph A→B, A→C:\n- When A is perturbed, A becomes 0\n- B and C are downstream of A, so they should become 1\n- This matches the observed data: B:1, C:1\n\nThe student's graph perfectly explains the observation. No inconsistencies found.\n\n**Conclusion:** The graph A→B, A→C is correct and parsimonious for this data. No edits needed.",
+          "student_refined": "Graph: A->B, A->C"
+        },
+        {
+          "query_index": 1,
+          "student_initial": "Graph: A->B, A->C",
+          "teacher_feedback": "Looking at the observation:\n\n**Perturb(A) → A:0 B:1 C:1**\n\nIn the student's proposed graph (A→B, A→C):\n\n- Perturbing A sets A=0 (perturbed node)\n- B and C are both downstream descendants of A, so they should be 1\n- This matches the observed data: B=1, C=1\n\nThe graph A→B, A→C perfectly explains the observation. Both B and C being 1 when A is perturbed confirms they are downstream of A, which matches the direct causal relationships in the graph.\n\n**Conclusion:** The student's graph is correct and explains the observation logically. No changes needed.",
+          "student_refined": "Graph: A->B, A->C"
+        },
+        {
+          "query_index": 2,
+          "student_initial": "Graph: A->B, A->C",
+          "teacher_feedback": "Let's analyze your proposed graph `A→B, A→C` against the observation:\n\n**Perturb(A) results:**\n- A=0 (perturbed node)\n- B=1 (downstream of A) ✓\n- C=1 (downstream of A) ✓\n\n**Analysis:**\n- Both B and C being 1 when A is perturbed means they must be downstream of A\n- Your graph `A→B, A→C` correctly explains this: perturbing A makes both B and C become 1\n- No inconsistencies found\n\n**Conclusion:** Your graph correctly explains the observation. No edits needed.",
+          "student_refined": "Graph: A->B, A->C"
+        },
+        {
+          "query_index": 3,
+          "student_initial": "Graph: A->B, A->C",
+          "teacher_feedback": "Looking at the perturbation data:\n\nPerturb(A) → A:0, B:1, C:1\n\nIn the student's proposed graph A→B, A→C:\n- When A is perturbed (A=0), both B and C should be 1 since they are downstream of A\n- This matches the observed data: B=1, C=1\n\nThe graph A→B, A→C perfectly explains the observation. No inconsistencies found.\n\n✅ **Correct**: The student's graph is valid and explains all observations.",
+          "student_refined": "Graph: A->B, A->C"
+        },
+        {
+          "query_index": 4,
+          "student_initial": "Graph: A->B, A->C",
+          "teacher_feedback": "Looking at the perturbation data:\n\n- Perturb(A) → A:0, B:1, C:1\n\nIn the student's proposed graph A→B, A→C:\n- When A is perturbed, A=0 (perturbed node)\n- B=1 (consistent with A→B, B is downstream of A)\n- C=1 (consistent with A→C, C is downstream of A)\n\nThe graph A→B, A→C perfectly explains the observation. All effects match what we'd expect from this causal structure.\n\n✅ **Correct**: The student's graph is valid and explains the observations. No edits needed.",
+          "student_refined": "Graph: A->B, A->C"
+        }
+      ],
+      "observation_set_id": "n1_004",
+      "n_observations": 1,
+      "n_ground_truths": 5,
+      "n_queries": 5,
+      "n_valid": 5,
+      "n_unique_valid": 1,
+      "n_unique_all": 1,
+      "n_recovered_gts": 1,
+      "parse_success_count": 5,
+      "parse_success_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 0.2,
+      "recovery_rate": 0.2,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "C"
+            ]
+          ]
+        }
+      ],
+      "valid_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "C"
+            ]
+          ]
+        }
+      ],
+      "unique_graphs": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "A",
+              "C"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Graph: C->A",
+          "teacher_feedback": "Let's check each experiment against the proposed graph `C → A`.\n\n**Experiment 1: Perturb(A)**  \n- Graph: A is perturbed → A=0, C=0 (C not downstream of A), B=0 (B not in graph).  \n- Matches data: A:0 B:0 C:0 ✅\n\n**Experiment 2: Perturb(B)**  \n- Graph: B is perturbed → B=0, A=0 (A not downstream of B), C=0 (C not downstream of B).  \n- Matches data: A:0 B:0 C:0 ✅\n\n**Experiment 3: Perturb(C)**  \n- Graph: C is perturbed → C=0, A=1 (A is downstream of C), B=0 (B not downstream of C).  \n- Matches data: A:1 B:0 C:0 ✅\n\nAll observations are consistent with `C → A`.  \nNo missing or extra edges are needed given the data.\n\n**Conclusion:** The student's graph is correct and explains all the data.",
+          "student_refined": "Graph: C->A"
+        }
+      ],
+      "observation_set_id": "n3_003",
+      "n_observations": 3,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 1,
+      "n_unique_valid": 1,
+      "n_unique_all": 1,
+      "n_recovered_gts": 1,
+      "parse_success_count": 1,
+      "parse_success_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 1.0,
+      "recovery_rate": 1.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "C",
+              "A"
+            ]
+          ]
+        }
+      ],
+      "valid_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "C",
+              "A"
+            ]
+          ]
+        }
+      ],
+      "unique_graphs": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "C",
+              "A"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Graph: A->B",
+          "teacher_feedback": "Let's check each experiment against the proposed graph A→B:\n\n**Experiment 1: Perturb(A) → A:0 B:1 C:0**\n- With A→B, perturbing A should make B=1 (B is downstream of A) ✓\n- A=0 (perturbed node) ✓  \n- C=0 (unconnected node) ✓\n- **Consistent**\n\n**Experiment 2: Perturb(C) → A:0 B:0 C:0**\n- C is unconnected in A→B, so perturbing C should only affect C itself ✓\n- A=0 (not downstream of C) ✓\n- B=0 (not downstream of C) ✓  \n- C=0 (perturbed node) ✓\n- **Consistent**\n\n**Conclusion:** The graph A→B correctly explains all observations. No edits needed.",
+          "student_refined": "Graph: A->B"
+        }
+      ],
+      "observation_set_id": "n2_014",
+      "n_observations": 2,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 1,
+      "n_unique_valid": 1,
+      "n_unique_all": 1,
+      "n_recovered_gts": 1,
+      "parse_success_count": 1,
+      "parse_success_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 1.0,
+      "recovery_rate": 1.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ]
+          ]
+        }
+      ],
+      "valid_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ]
+          ]
+        }
+      ],
+      "unique_graphs": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Graph: A->C, B->C",
+          "teacher_feedback": "Let's check each experiment against the proposed graph A→C, B→C.\n\n**Experiment 1: Perturb(A) → A:0 B:0 C:1**  \n- A=0: correct (perturbed node)  \n- B=0: correct (B is not downstream of A)  \n- C=1: correct (C is downstream of A)  \n✅ Consistent\n\n**Experiment 2: Perturb(B) → A:0 B:0 C:1**  \n- B=0: correct (perturbed node)  \n- A=0: correct (A is not downstream of B)  \n- C=1: correct (C is downstream of B)  \n✅ Consistent\n\nBoth experiments are fully consistent with the graph A→C, B→C. No edits needed — the student's graph correctly explains all observations.",
+          "student_refined": "Graph: A->C, B->C"
+        }
+      ],
+      "observation_set_id": "n2_010",
+      "n_observations": 2,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 1,
+      "n_unique_valid": 1,
+      "n_unique_all": 1,
+      "n_recovered_gts": 1,
+      "parse_success_count": 1,
+      "parse_success_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 1.0,
+      "recovery_rate": 1.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        }
+      ],
+      "valid_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        }
+      ],
+      "unique_graphs": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Graph: C->A",
+          "teacher_feedback": "Let's check each experiment against the proposed graph `C → A`.\n\n**Experiment 1: Perturb(A) → A:0 B:0 C:0**  \n- Perturbing A sets A=0.  \n- In `C → A`, A has no outgoing edges, so no other nodes should be 1.  \n- Observed: B=0, C=0. ✓ Consistent.\n\n**Experiment 2: Perturb(C) → A:1 B:0 C:0**  \n- Perturbing C sets C=0.  \n- In `C → A`, A is downstream of C, so A should be 1.  \n- Observed: A=1. ✓ Consistent.\n\nBoth experiments are consistent with `C → A`.  \nNo missing edges are required because B is always 0 (no perturbation affects it), so B is likely a root node with no causal links in this system.\n\n**Conclusion:** The student's graph `C → A` is correct and explains the data.",
+          "student_refined": "Graph: C->A"
+        },
+        {
+          "query_index": 1,
+          "student_initial": "Graph: C->A",
+          "teacher_feedback": "Let's check the student's proposed graph `C → A` against the data.\n\n**Perturb(A):**  \n- A=0 (perturbed), B=0, C=0  \n- In `C → A`, perturbing A should not affect C (C not downstream of A), so C=0 is fine.  \n- B is not connected, so B=0 is fine.  \n✅ Consistent.\n\n**Perturb(C):**  \n- C=0 (perturbed), A=1, B=0  \n- In `C → A`, A is downstream of C, so perturbing C should make A=1.  \n✅ Consistent.\n\nNo contradictions — the graph explains all observations.  \n**Feedback:** Your graph `C → A` is correct and consistent with the data. No changes needed.",
+          "student_refined": "Graph: C->A"
+        },
+        {
+          "query_index": 2,
+          "student_initial": "Graph: A->C",
+          "teacher_feedback": "Let's check the student's graph `A → C` against the data.\n\n**Perturb(A):**  \n- A=0 (perturbed), B=0, C=0  \n- C should be 1 if C is downstream of A — but C=0 here.  \n- This contradicts `A → C` because perturbing A should make C=1.  \n\n**Perturb(C):**  \n- C=0 (perturbed), A=1, B=0  \n- A=1 means A must be downstream of C — but the graph says `A → C`, not `C → A`.  \n- This also contradicts the graph.\n\n**Conclusion:**  \nThe graph `A → C` is inconsistent with both experiments.  \nThe data suggest `C → A` instead:  \n- Perturb(C) → A=1 (A downstream of C)  \n- Perturb(A) → C=0 (C not downstream of A)  \n\n**Suggested edit:**  \nReverse the edge: `C → A`.",
+          "student_refined": "Graph: C->A"
+        },
+        {
+          "query_index": 3,
+          "student_initial": "Graph: C->A",
+          "teacher_feedback": "Let's check the student's proposed graph `C → A` against the data.\n\n**Perturb(A):**  \n- A=0 (perturbed), B=0, C=0.  \n- In `C → A`, perturbing A should not affect C (C is not downstream of A), so C=0 is fine.  \n- B is not connected, so B=0 is fine.  \n✅ Consistent.\n\n**Perturb(C):**  \n- C=0 (perturbed), A=1, B=0.  \n- In `C → A`, A is downstream of C, so perturbing C should make A=1.  \n✅ Consistent.\n\nNo contradictions — the graph explains the data.  \nNo extra edges needed since B is unaffected in both experiments.\n\n**Conclusion:** The student's graph `C → A` is correct and parsimonious.",
+          "student_refined": "Graph: C->A"
+        }
+      ],
+      "observation_set_id": "n2_007",
+      "n_observations": 2,
+      "n_ground_truths": 4,
+      "n_queries": 4,
+      "n_valid": 4,
+      "n_unique_valid": 1,
+      "n_unique_all": 1,
+      "n_recovered_gts": 1,
+      "parse_success_count": 4,
+      "parse_success_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 0.25,
+      "recovery_rate": 0.25,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "C",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "C",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "C",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "C",
+              "A"
+            ]
+          ]
+        }
+      ],
+      "valid_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "C",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "C",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "C",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "C",
+              "A"
+            ]
+          ]
+        }
+      ],
+      "unique_graphs": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "C",
+              "A"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Graph: A->B",
+          "teacher_feedback": "Looking at the observation:\n\nPerturb(A) → A:0, B:1, C:0\n\nYour proposed graph A→B correctly explains this:\n- A is perturbed, so A=0\n- B is downstream of A, so B=1  \n- C is not connected to A, so C=0\n\nThe single observation is fully consistent with your graph. No edits are needed based on this data point.\n\n**Conclusion:** Your graph A→B is valid and parsimonious for the given observation.",
+          "student_refined": "Graph: A->B"
+        },
+        {
+          "query_index": 1,
+          "student_initial": "Graph: A->B",
+          "teacher_feedback": "Let's check if the student's graph `A→B` explains the observation:\n\n**Observation:** Perturb(A) → A:0, B:1, C:0  \n\n- Perturbing A sets A=0 (perturbed node).  \n- B=1 means B is downstream of A — consistent with `A→B`.  \n- C=0 means C is not downstream of A — consistent since C is not in the graph.  \n\n✅ The graph `A→B` explains the data correctly. No edits needed.",
+          "student_refined": "Graph: A->B"
+        },
+        {
+          "query_index": 2,
+          "student_initial": "Graph: A->B",
+          "teacher_feedback": "Let's check if the student's graph `A→B` explains the observation:\n\n**Observation:** Perturb(A) → A:0, B:1, C:0  \n\n- Perturbing A sets A=0 (perturbed node).  \n- B=1 means B must be downstream of A in the graph.  \n- C=0 means C is not downstream of A.  \n\n**Graph A→B:**\n- A→B means perturbing A should make B=1 (matches observation).  \n- C is not connected, so C=0 (matches observation).  \n\n✅ The graph `A→B` is consistent with the given data.  \n\n**Conclusion:** The student's graph is correct and explains the observation. No changes needed.",
+          "student_refined": "Graph: A->B"
+        },
+        {
+          "query_index": 3,
+          "student_initial": "Graph: A->B",
+          "teacher_feedback": "Let's analyze the observation using your rules:\n\n**Observation:** Perturb(A) → A:0, B:1, C:0\n\n**Student's graph:** A→B\n\n**Analysis:**\n- Perturbing A makes A=0 (perturbed node)\n- B=1 means B must be downstream of A ✓ (consistent with A→B)\n- C=0 means C is not downstream of A ✓ (consistent with no connection to C)\n\n**Conclusion:** The student's graph A→B correctly explains this single observation. No edits are needed based on the available data.\n\n✅ **Graph is valid** for this observation.",
+          "student_refined": "Graph: A->B, B->C"
+        }
+      ],
+      "observation_set_id": "n1_003",
+      "n_observations": 1,
+      "n_ground_truths": 4,
+      "n_queries": 4,
+      "n_valid": 3,
+      "n_unique_valid": 1,
+      "n_unique_all": 2,
+      "n_recovered_gts": 1,
+      "parse_success_count": 4,
+      "parse_success_rate": 1.0,
+      "valid_rate": 0.75,
+      "novelty_rate": 0.5,
+      "recovery_rate": 0.25,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ],
+            [
+              "B",
+              "C"
+            ]
+          ]
+        }
+      ],
+      "valid_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ]
+          ]
+        }
+      ],
+      "unique_graphs": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "B"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Graph: C->A, C->B",
+          "teacher_feedback": "Let's check each experiment against the proposed graph `C → A, C → B`.\n\n---\n\n**1. Perturb(A) → A:0, B:0, C:0**  \n- In the graph, A has no parents, so perturbing A should only affect A (no descendants).  \n- Observed: B=0, C=0 — matches (B and C not descendants of A).  \n✅ Consistent.\n\n---\n\n**2. Perturb(B) → A:1, B:0, C:0**  \n- In the graph, B has no parents except C, but perturbing B should not affect C (C not descendant of B).  \n- But A=1 means A must be a descendant of B in the graph.  \n- In `C→A, C→B`, there is no B→A path.  \n❌ **Inconsistency**: A should be 0 if B is perturbed and no B→A edge exists.\n\n---\n\n**3. Perturb(C) → A:1, B:1, C:0**  \n- C→A means A is descendant of C → A=1 ✅  \n- C→B means B is descendant of C → B=1 ✅  \n✅ Consistent.\n\n---\n\n**Problem**: Experiment 2 shows perturbing B makes A=1, so A must be downstream of B.  \nCurrent graph has no B→A path.\n\n---\n\n**Fix**: Add `B → A`.  \nThen:  \n- Perturb(B): B=0, A=1 (downstream), C=0 (not downstream) ✅ matches experiment 2.  \n- Perturb(A): A=0, B=0 (B not downstream of A), C=0 ✅ matches experiment 1.  \n- Perturb(C): C=0, A=1 (C→A), B=1 (C→B) ✅ matches experiment 3.\n\n---\n\n**Final suggested graph**:  \n```\nC → A, C → B, B → A\n```\nThis explains all data.",
+          "student_refined": "Graph: C->B, B->A"
+        },
+        {
+          "query_index": 1,
+          "student_initial": "Graph: C->A, C->B",
+          "teacher_feedback": "Let's check each experiment against the proposed graph `C→A, C→B`.\n\n**Experiment 1: Perturb(A) → A:0, B:0, C:0**  \n- In `C→A, C→B`, perturbing A means A=0, C is not downstream of A so C=0, B is not downstream of A so B=0.  \n✅ Matches.\n\n**Experiment 2: Perturb(B) → A:1, B:0, C:0**  \n- Perturb B → B=0.  \n- In `C→A, C→B`, A is not downstream of B (no B→A edge), so A should be 0, but data says A=1.  \n❌ **Inconsistency**: A=1 means A must be downstream of B, but graph lacks B→A.\n\n**Experiment 3: Perturb(C) → A:1, B:1, C:0**  \n- Perturb C → C=0, A and B are downstream of C so A=1, B=1.  \n✅ Matches.\n\n---\n\n**Problem**: The graph `C→A, C→B` fails experiment 2 because perturbing B gives A=1, meaning A must be causally downstream of B.\n\n**Minimal correction**:  \nAdd `B→A` to the graph.\n\n**Corrected graph**: `C→A, C→B, B→A`  \n- Perturb(B): B=0, A is downstream of B so A=1, C is not downstream of B so C=0 → matches experiment 2.  \n- Other experiments still match.\n\n---\n\n**Final feedback**:  \nYour graph is missing `B→A`. Add `B→A` to explain why perturbing B makes A=1.",
+          "student_refined": "Graph: C->B, B->A"
+        }
+      ],
+      "observation_set_id": "n3_008",
+      "n_observations": 3,
+      "n_ground_truths": 2,
+      "n_queries": 2,
+      "n_valid": 2,
+      "n_unique_valid": 1,
+      "n_unique_all": 1,
+      "n_recovered_gts": 1,
+      "parse_success_count": 2,
+      "parse_success_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 0.5,
+      "recovery_rate": 0.5,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "C",
+              "B"
+            ],
+            [
+              "B",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "C",
+              "B"
+            ],
+            [
+              "B",
+              "A"
+            ]
+          ]
+        }
+      ],
+      "valid_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "C",
+              "B"
+            ],
+            [
+              "B",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "C",
+              "B"
+            ],
+            [
+              "B",
+              "A"
+            ]
+          ]
+        }
+      ],
+      "unique_graphs": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "C",
+              "B"
+            ],
+            [
+              "B",
+              "A"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Graph: C->A, B->A",
+          "teacher_feedback": "Let's check each experiment against the proposed graph `C→A, B→A`.\n\n**Experiment 1: Perturb(B) → A:1 B:0 C:0**  \n- B is perturbed → B=0.  \n- A=1 means A is downstream of B → consistent with B→A.  \n- C=0 means C is not downstream of B → consistent (no edge from B to C).  \n✅ This matches the graph.\n\n**Experiment 2: Perturb(C) → A:1 B:0 C:0**  \n- C is perturbed → C=0.  \n- A=1 means A is downstream of C → consistent with C→A.  \n- B=0 means B is not downstream of C → consistent (no edge from C to B).  \n✅ This matches the graph.\n\nBoth experiments are consistent with the student’s graph. No changes are needed.\n\n**Conclusion:** The graph `C→A, B→A` correctly explains all observations.",
+          "student_refined": "Graph: C->A, B->A"
+        }
+      ],
+      "observation_set_id": "n2_027",
+      "n_observations": 2,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 1,
+      "n_unique_valid": 1,
+      "n_unique_all": 1,
+      "n_recovered_gts": 1,
+      "parse_success_count": 1,
+      "parse_success_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 1.0,
+      "recovery_rate": 1.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "C",
+              "A"
+            ],
+            [
+              "B",
+              "A"
+            ]
+          ]
+        }
+      ],
+      "valid_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "C",
+              "A"
+            ],
+            [
+              "B",
+              "A"
+            ]
+          ]
+        }
+      ],
+      "unique_graphs": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "C",
+              "A"
+            ],
+            [
+              "B",
+              "A"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Graph: A->B",
+          "teacher_feedback": "Let's analyze this step by step.\n\n**Observation:**  \nPerturb(B) → A:1, B:0, C:0  \n\n**Rules applied:**  \n- Perturbing B makes B=0 (by definition).  \n- A=1 means A must be a downstream effect of B (rule 3).  \n- So B → A must exist in the graph.\n\n**Student's graph:** A → B  \n- This means A causes B, so perturbing B should not affect A (A not downstream of B).  \n- But the data shows perturbing B makes A=1, which contradicts A → B.\n\n**Conclusion:**  \nThe student's graph is **incorrect** for this observation.  \nThe correct causal relationship must be **B → A**.\n\n**Suggested edit:**  \nReverse the edge: `B → A`",
+          "student_refined": "Graph: B->A"
+        },
+        {
+          "query_index": 1,
+          "student_initial": "Graph: A->B",
+          "teacher_feedback": "Let's analyze your proposed graph `A→B` against the observation:\n\n**Observation:** Perturb(B) → A:1, B:0, C:0\n\n**Rule application:**\n- Perturbing B makes A=1 → A must be *downstream* of B (Rule 3)\n- But in your graph `A→B`, A is *upstream* of B, so perturbing B should make A=0 (Rule 2)\n\n**Inconsistency:** Your graph shows A→B, but the data shows B→A (since perturbing B activates A).\n\n**Correction needed:** Reverse the edge to `B→A`.\n\n**Validated graph:** `B→A` explains the observation perfectly:\n- Perturb(B) → B=0 (perturbed node), A=1 (downstream), C=0 (unconnected) ✓",
+          "student_refined": "Graph: B->A"
+        },
+        {
+          "query_index": 2,
+          "student_initial": "Graph: A->B",
+          "teacher_feedback": "Let's analyze this step by step.\n\n**Observation:**  \nPerturb(B) → A:1, B:0, C:0  \n\n**Student's graph:** A → B  \n\n**Rule check:**  \n- Perturbing B means B=0.  \n- If A→B, then A is **not** downstream of B.  \n- So perturbing B should leave A unaffected (A=0 if no other causes, but here A=1).  \n- But in the data, A=1 after perturbing B, meaning A must be **downstream** of B.  \n\n**Inconsistency:**  \nThe data implies B→A, but the graph says A→B.  \n\n**Correction needed:**  \nReverse the edge: **B → A**  \n\n**Final valid graph:**  \nB → A",
+          "student_refined": "Graph: B->A"
+        },
+        {
+          "query_index": 3,
+          "student_initial": "Graph: A->B",
+          "teacher_feedback": "Let's analyze this step by step.\n\n**Observation:**  \nPerturb(B) → A:1, B:0, C:0  \n\n**Rules applied:**  \n- Perturbing B makes B=0 (by definition).  \n- A=1 means A must be a downstream effect of B (B→A).  \n- C=0 means C is not downstream of B.  \n\n**Student's graph:** A→B  \n- This means B is downstream of A, not the other way around.  \n- If A→B, then perturbing B should make A=0 (since A is not downstream of B).  \n- But the data shows perturbing B makes A=1.  \n\n**Conclusion:**  \nThe student's graph is **incorrect** because it violates the causal direction seen in the perturbation data.  \n\n**Correction needed:**  \nReverse the edge: **B→A** (remove A→B, add B→A).  \n\nFinal valid graph:  \n```\nGraph: B->A\n```",
+          "student_refined": "Graph: B->A"
+        }
+      ],
+      "observation_set_id": "n1_007",
+      "n_observations": 1,
+      "n_ground_truths": 4,
+      "n_queries": 4,
+      "n_valid": 4,
+      "n_unique_valid": 1,
+      "n_unique_all": 1,
+      "n_recovered_gts": 1,
+      "parse_success_count": 4,
+      "parse_success_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 0.25,
+      "recovery_rate": 0.25,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ]
+          ]
+        }
+      ],
+      "valid_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ]
+          ]
+        }
+      ],
+      "unique_graphs": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Graph: No edges",
+          "teacher_feedback": "Let's analyze this step by step.\n\n**Observation:**  \nPerturb(C) → A:0, B:0, C:0  \n\n**Rules applied:**  \n- Perturbing C means C=0.  \n- A=0 means A is **not** a downstream effect of C.  \n- B=0 means B is **not** a downstream effect of C.  \n\n**Student's graph:** No edges.  \n\n**Check:**  \nIf there are no edges, perturbing C affects only C, so A and B remain at baseline (0). This matches the observation perfectly.  \n\n**Conclusion:**  \nThe student's graph is consistent with the data. No changes needed.",
+          "student_refined": "Graph: No edges"
+        },
+        {
+          "query_index": 1,
+          "student_initial": "Graph: No edges",
+          "teacher_feedback": "Let's analyze this step by step.\n\n**Observation:**\n- Perturb(C) → A:0, B:0, C:0\n\n**Rules applied:**\n- When C is perturbed, C=0 (perturbed node is always 0)\n- A and B are both 0, meaning neither is downstream of C\n- This is consistent with \"No edges\" since there are no causal paths from C to A or B\n\n**Conclusion:**\nThe student's proposed graph (no edges) correctly explains the observation. No edits are needed.\n\n**Feedback:**\n✓ Your graph correctly explains the data. With no edges, perturbing C affects only C itself, leaving A and B at 0, which matches the observation.",
+          "student_refined": "Graph: No edges"
+        },
+        {
+          "query_index": 2,
+          "student_initial": "Graph: No edges",
+          "teacher_feedback": "Let's analyze the observation:\n\n**Perturb(C) → A:0 B:0 C:0**\n\nAccording to the rules:\n- C=0 because it's the perturbed node\n- A=0 and B=0 means neither A nor B are downstream descendants of C\n\n**Student's graph (no edges)**:\n- With no edges, perturbing C cannot affect A or B\n- A and B would naturally be 0 since they're not downstream of C\n- This perfectly matches the observation\n\n**Conclusion**: The student's graph with no edges correctly explains this single observation. No edits are needed based on the available data.\n\n**Feedback**: Your graph is consistent with the observation. With only one perturbation experiment showing no effects, a graph with no edges is a valid explanation.",
+          "student_refined": "Graph: No edges"
+        },
+        {
+          "query_index": 3,
+          "student_initial": "Graph: No edges",
+          "teacher_feedback": "Let's analyze the single observation:\n\n**Perturb(C) → A:0 B:0 C:0**\n\nAccording to the rules:\n- When C is perturbed, C=0 (perturbed node is always 0)\n- Only downstream descendants of C should be 1\n- All nodes (A, B, C) are 0\n\n**Analysis:**\n- Since A=0 and B=0 when C is perturbed, this means A and B are NOT downstream descendants of C\n- The student's proposed graph (no edges) satisfies this: with no edges, perturbing C only affects C itself, and A and B remain 0\n\n**Conclusion:**\nThe student's graph with no edges correctly explains this observation. There are no inconsistencies, and no evidence suggesting any causal relationships between the variables.\n\n✅ **Graph is correct** - No edits needed. The empty graph parsimoniously explains the observed data.",
+          "student_refined": "Graph: No edges"
+        },
+        {
+          "query_index": 4,
+          "student_initial": "Graph: No edges",
+          "teacher_feedback": "Let's analyze the observation:\n\n**Perturb(C) → A:0, B:0, C:0**\n\nAccording to the rules:\n- C=0 because it's the perturbed node\n- A=0 and B=0 means neither A nor B are downstream descendants of C\n\n**Student's graph (no edges)**:\n- With no edges, perturbing C should only affect C itself\n- A and B should remain at 0 (since they're not connected to C)\n- This perfectly matches the observation: A=0, B=0, C=0\n\n**Conclusion**: The student's proposed graph with no edges correctly explains this observation. No edits are needed.\n\n✅ **Correct** - The empty graph is consistent with the perturbation data.",
+          "student_refined": "Graph: No edges"
+        },
+        {
+          "query_index": 5,
+          "student_initial": "Graph: No edges",
+          "teacher_feedback": "Let's check the student's proposed graph (no edges) against the observation.\n\n**Observation:** Perturb(C) → A:0, B:0, C:0  \n\n**Rules applied:**\n- Perturbing C means C=0, and only descendants of C would be 1.  \n- Here, A=0 and B=0 means A and B are **not** descendants of C.  \n\n**Analysis:**\n- No edges means no descendants of C, so A=0 and B=0 are consistent.  \n- C=0 is consistent (perturbed node is 0).  \n\n✅ The student's graph explains the data correctly.  \n\n**Conclusion:** The graph is valid for this single experiment. No edits needed.",
+          "student_refined": "Graph: No edges"
+        },
+        {
+          "query_index": 6,
+          "student_initial": "Graph: No edges",
+          "teacher_feedback": "Let's analyze the observation:\n\n**Perturb(C) → A:0 B:0 C:0**\n\nAccording to the rules:\n- When C is perturbed, C itself should be 0 (✓ matches observation)\n- Any downstream descendants of C should be 1\n- All other nodes should be 0\n\nIn the student's proposed graph (no edges), there are no downstream descendants of C, so all nodes should be 0. This perfectly matches the observation: A=0, B=0, C=0.\n\n**Conclusion:** The student's graph with no edges correctly explains this observation. No edits are needed.\n\n✅ **The graph is correct** - it parsimoniously explains the perturbation data.",
+          "student_refined": "Graph: No edges"
+        },
+        {
+          "query_index": 7,
+          "student_initial": "Graph: No edges",
+          "teacher_feedback": "Let's analyze the single observation:  \n\n**Perturb(C) → A:0, B:0, C:0**  \n\n- Perturbing C means C is fixed to 0.  \n- A and B are both 0.  \n- In the student's graph (no edges), perturbing C should not affect A or B, so A=0 and B=0 is consistent.  \n- C=0 is expected because it's the perturbed node.  \n\nNo contradictions — the empty graph explains the data.  \n\n**Conclusion:** The student's graph is correct given the single experiment.",
+          "student_refined": "Graph: No edges"
+        },
+        {
+          "query_index": 8,
+          "student_initial": "Graph: No edges",
+          "teacher_feedback": "Let's analyze the single observation:\n\n**Perturb(C) → A:0 B:0 C:0**\n\nAccording to the rules:\n- When C is perturbed, C itself is 0\n- Only downstream descendants of C should be 1\n- All other nodes should be 0\n\nIn this case: A=0, B=0, C=0\n\n**Analysis:**\n- Since A=0 and B=0, this means neither A nor B is downstream of C\n- The student's proposed graph (no edges) satisfies this perfectly: perturbing C affects only C, and since there are no edges, no other nodes become 1\n\n**Conclusion:**\nThe student's graph with no edges correctly explains the observation. No edits are needed.\n\n**Feedback:** ✓ Your graph is correct and parsimonious. It explains the data: perturbing C affects only C, with no downstream effects on A or B.",
+          "student_refined": "Graph: No edges"
+        },
+        {
+          "query_index": 9,
+          "student_initial": "Graph: No edges",
+          "teacher_feedback": "Let's analyze the single observation:\n\n- **Perturb(C)** → A:0, B:0, C:0  \n  - C=0 because it's the perturbed node.  \n  - A=0 and B=0 means A and B are **not** downstream of C.  \n\nThe student's graph has **no edges**, so:  \n- C has no descendants.  \n- Perturbing C should only affect C itself (set to 0), and A and B should remain 0.  \n\nThis matches the observation exactly.  \n\n✅ **Conclusion:** The student's graph is consistent with the data. No changes needed.",
+          "student_refined": "Graph: No edges"
+        },
+        {
+          "query_index": 10,
+          "student_initial": "Graph: No edges",
+          "teacher_feedback": "Let's analyze the observation:\n\n**Perturb(C) → A:0 B:0 C:0**\n\n- Perturbing C makes C=0 (perturbed node is always 0)\n- A=0 means A is NOT downstream of C (no path C→...→A)\n- B=0 means B is NOT downstream of C (no path C→...→B)\n\n**Student's graph (no edges)**:\n- With no edges, perturbing C affects only C itself\n- A and B remain 0 since they have no causal connection to C\n- This perfectly matches the observation\n\n**Conclusion**: The student's graph with no edges correctly explains this single observation. No edits are needed based on the available data.\n\n✅ **Graph is valid** - No inconsistencies with the given perturbation experiment.",
+          "student_refined": "Graph: No edges"
+        },
+        {
+          "query_index": 11,
+          "student_initial": "Graph: No edges",
+          "teacher_feedback": "Let's analyze this step by step.\n\n**Observation:**\n- Perturb(C) → A:0, B:0, C:0\n\n**Student's graph:** No edges (A, B, C are all independent)\n\n**Analysis:**\n- Perturbing C makes C=0 (expected for perturbed node)\n- A=0 and B=0 means neither A nor B is downstream of C\n- With no edges in the graph, perturbing C should only affect C, leaving A and B at their natural states\n- However, the data shows A=0 and B=0, which is consistent with no edges since perturbing C wouldn't affect them\n\n**Conclusion:** The student's graph (no edges) is consistent with this single observation. Since we only have one perturbation experiment and it shows no downstream effects, the empty graph logically explains the data.\n\n**Feedback:** Your graph correctly explains the observation. No changes needed based on the available data.",
+          "student_refined": "Graph: No edges"
+        }
+      ],
+      "observation_set_id": "n1_009",
+      "n_observations": 1,
+      "n_ground_truths": 12,
+      "n_queries": 12,
+      "n_valid": 12,
+      "n_unique_valid": 1,
+      "n_unique_all": 1,
+      "n_recovered_gts": 1,
+      "parse_success_count": 12,
+      "parse_success_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 0.08333333333333333,
+      "recovery_rate": 0.08333333333333333,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        }
+      ],
+      "valid_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        }
+      ],
+      "unique_graphs": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        }
+      ]
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Graph: No edges",
+          "teacher_feedback": "Let's check each perturbation experiment against the student's proposed graph (no edges).\n\n**Perturb(B):**\n- B=0 (perturbed node)\n- A=0, C=0\n- With no edges, A and C are not downstream of B, so A=0 and C=0 is consistent.\n\n**Perturb(C):**\n- C=0 (perturbed node)  \n- A=0, B=0\n- With no edges, A and B are not downstream of C, so A=0 and B=0 is consistent.\n\n**Conclusion:** The student's graph with no edges perfectly explains all observations. No edits are needed.\n\n✅ **Correct** - Your proposed DAG (no edges) is valid and parsimonious.",
+          "student_refined": "Graph: No edges"
+        },
+        {
+          "query_index": 1,
+          "student_initial": "Graph: No edges",
+          "teacher_feedback": "Let's check the student's proposed graph (no edges) against the data.\n\n**Perturb(B):**  \n- B=0 (perturbed node)  \n- A=0, C=0 (no edges from B, so consistent)  \n\n**Perturb(C):**  \n- C=0 (perturbed node)  \n- A=0, B=0 (no edges from C, so consistent)  \n\nNo perturbation made any node = 1, so no causal effects are observed.  \nA graph with no edges means no node affects any other, which matches the data.\n\n✅ **The student's graph is correct and explains the observations.**  \nNo changes needed.",
+          "student_refined": "Graph: No edges"
+        },
+        {
+          "query_index": 2,
+          "student_initial": "Graph: No edges",
+          "teacher_feedback": "Let's check each experiment against the proposed graph (no edges):\n\n**Experiment 1: Perturb(B) → A:0 B:0 C:0**\n- With no edges, perturbing B should only affect B itself (set to 0)\n- A and C should remain at their natural state (0) since no causal paths exist\n- ✓ Consistent with no-edge graph\n\n**Experiment 2: Perturb(C) → A:0 B:0 C:0**  \n- Same logic: perturbing C only affects C, A and B remain 0\n- ✓ Consistent with no-edge graph\n\n**Conclusion:** The student's proposed graph with no edges perfectly explains all observations. When any node is perturbed, only that node is affected (set to 0), and no other nodes become 1, which is exactly what we'd expect with no causal connections.\n\n✅ **Correct as is** - No edits needed. The graph logically explains all perturbation data.",
+          "student_refined": "Graph: No edges"
+        },
+        {
+          "query_index": 3,
+          "student_initial": "Graph: No edges",
+          "teacher_feedback": "Let's check each experiment against the student's proposed graph (no edges):\n\n**Experiment 1: Perturb(B) → A:0 B:0 C:0**\n- With no edges, B has no downstream effects, so A and C should be 0 (matches observation)\n- B itself is perturbed, so B=0 (matches observation)\n\n**Experiment 2: Perturb(C) → A:0 B:0 C:0**  \n- With no edges, C has no downstream effects, so A and B should be 0 (matches observation)\n- C itself is perturbed, so C=0 (matches observation)\n\n**Conclusion**: The student's graph (no edges) correctly explains all observations. No edges are needed since perturbing any node only affects that node itself, and all effects show 0 for all nodes.\n\n✅ **Correct as is** - The empty graph is consistent with all perturbation data.",
+          "student_refined": "Graph: No edges"
+        }
+      ],
+      "observation_set_id": "n2_021",
+      "n_observations": 2,
+      "n_ground_truths": 4,
+      "n_queries": 4,
+      "n_valid": 4,
+      "n_unique_valid": 1,
+      "n_unique_all": 1,
+      "n_recovered_gts": 1,
+      "parse_success_count": 4,
+      "parse_success_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 0.25,
+      "recovery_rate": 0.25,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        }
+      ],
+      "valid_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        }
+      ],
+      "unique_graphs": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": []
+        }
+      ]
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "From the observations:  \n\n- Perturb(B) → A:0 B:0 C:1 means C is downstream of B, so there must be a path from B to C.  \n- Perturb(C) → A:0 B:0 C:0 means C has no descendants, so C cannot point to A or B.  \n\nAlso, A is 0 in both perturbations, so A cannot be an ancestor of B or C (otherwise perturbing B or C would not affect A).  \n\nThe simplest DAG satisfying this is:  \n**B → C** (because perturbing B changes C to 1, and perturbing C leaves all 0).  \nA is isolated.  \n\nGraph: B->C",
+          "teacher_feedback": "Your proposed graph **B→C** with A isolated is **correct** and explains all observations:\n\n- **Perturb(B)**: B=0 (perturbed), C=1 (downstream of B), A=0 (isolated) ✓\n- **Perturb(C)**: C=0 (perturbed), B=0 (not downstream of C), A=0 (isolated) ✓\n\nNo inconsistencies exist. The graph is minimal and fully supported by the perturbation data. Well done!",
+          "student_refined": "Graph: B->C"
+        },
+        {
+          "query_index": 1,
+          "student_initial": "From the observations:\n\n- Perturb(B) → C:1 means C is downstream of B, so there must be a path from B to C.\n- Perturb(C) → A:0 B:0 C:0 means C has no descendants, so no edges from C to A or B.\n\nPossible minimal edges: B→C.  \nBut Perturb(B) → A:0 means A is not downstream of B, so no path from B to A.  \nAlso, Perturb(C) → B:0 means B is not downstream of C, so no C→B.  \nPerturb(C) → A:0 means A is not downstream of C.\n\nNo other constraints force edges into A, so A could be isolated or a cause of B or C, but Perturb(B) didn't change A, so A cannot be a descendant of B.  \nIf A→B, then Perturb(B) would still show A:0 because perturbing B fixes B=0 regardless of A. So A→B is allowed.  \nIf A→C, then Perturb(B) would still show A:0 because A is not downstream of B. But Perturb(C) would show A:0 because perturbing C fixes C=0 and breaks the effect from A to C? Wait, but if A→C, then Perturb(C) → A:0 is fine because A is not downstream of C (A is an ancestor, not descendant). So A→C is allowed.\n\nBut Perturb(B) → C:1 means B→C must exist.  \nCould there be A→B→C? That would give Perturb(B) → A:0 (since A is not downstream of B), B:0, C:1 (since C is downstream of B).  \nPerturb(C) → A:0, B:0, C:0. Works.\n\nAlso possible: B→C and A→C (two separate edges). Then Perturb(B) → C:1 still holds, A:0 still holds.  \nBut Perturb(C) → A:0, B:0, C:0 still holds.\n\nBut the constraint says at most 3 edges. Both A→B→C (2 edges) and A→C, B→C (2 edges) are possible.\n\nLet's check if A→B→C: Perturb(B) → A:0 (since A is not downstream of B — actually A is an ancestor of B, so not downstream), correct.  \nPerturb(C) → all 0, correct.\n\nLet's check if A→C, B→C: Perturb(B) → C:1 (since B→C), A:0 (since A not downstream of B), correct.  \nPerturb(C) → all 0, correct.\n\nBoth fit. But we need one DAG. Let's pick A→B→C because it's a chain and fits all constraints.\n\nGraph: A->B, B->C",
+          "teacher_feedback": "Your proposed graph A→B→C has a critical inconsistency with the perturbation data.\n\n**Problem:**\n- Perturb(B) shows C=1, which correctly indicates B→C\n- However, Perturb(B) shows A=0, but in your graph A→B→C, A is an ancestor of B, not a descendant. This is actually fine for the A=0 observation.\n- **The fatal flaw:** If A→B exists, then Perturb(A) would make B=1 (since B is downstream of A), but we don't have Perturb(A) data to confirm this. More importantly, your graph suggests A could influence C through B, but the data doesn't require this.\n\n**Better minimal solution:** B→C only\n- Perturb(B) → C=1: explained by B→C\n- Perturb(B) → A=0: A is not downstream of B ✓\n- Perturb(C) → all 0: C has no descendants ✓\n- A is isolated in this case, which satisfies all observations\n\n**Suggestion:** Remove A→B edge. The minimal valid DAG is just B→C with A unconnected. This explains all observations without unnecessary edges.",
+          "student_refined": "Graph: B->C"
+        },
+        {
+          "query_index": 2,
+          "student_initial": "From the observations:  \n- Perturb(B) → A:0 B:0 C:1 means C is downstream of B (B → C or B → ... → C).  \n- Perturb(C) → A:0 B:0 C:0 means C has no descendants, and no other nodes are downstream of C.  \n\nSo B → C is required.  \nA is never 1 in any experiment, so A is not a descendant of B or C.  \nAlso, A cannot be an ancestor of B or C, because if A were an ancestor of B, then perturbing B would make A 0 (which is fine), but if A were an ancestor of C, then perturbing B would break the path A → ... → B → C, so C would be 0 (contradiction). Actually, let's check carefully:  \n\nIf A → B → C, then perturb(B) breaks A → B → C, so C would be 0 (since C is downstream of B but only via B? Wait, if B is fixed to 0, then C is still downstream of B if B → C exists, so C=1. But if A → B → C, perturb(B) still yields C=1 because B → C is direct. So A → B is allowed. But perturb(C) yields A:0 B:0 C:0, so A is not downstream of C, so no A ← C. Also, if A → C directly, then perturb(B) would still give C=1 (since B → C exists), but perturb(C) would give A=0 (fine). But if A → C and B → C, then perturb(B) still gives C=1, so that's fine. But we must check if A causes B: if A → B → C, perturb(B) yields A=0 (since A is not downstream of B) and C=1, matches data. Perturb(C) yields A=0 B=0 C=0, matches data.  \n\nBut if A → C and B → C, then perturb(B) yields C=1 (matches), perturb(C) yields A=0 B=0 C=0 (matches).  \n\nBut if A → B and B → C, then perturb(B) yields A=0 B=0 C=1 (matches), perturb(C) yields A=0 B=0 C=0 (matches).  \n\nWe have no info about A's relationship to B except A is not downstream of B or C. So A could be independent or a parent of B or C.  \n\nBut if A → C, then perturb(C) would make C=0, but A is unaffected (A=0 in data — but A could be 1 if it's a root with no perturbation? No, in perturb(C), A is 0, so A cannot be a root that is 1 by default; actually, in these rules, a node is 1 only if it's a descendant of the perturbed node. So if A is a root and not perturbed, it should be 0 anyway? Wait, careful: The rules: \"A node is 1 if it is a downstream descendant of the perturbed node.\" Otherwise it's 0. So if A is not downstream of perturbed node, it's 0. So A could be an ancestor of B or C and still be 0 in both experiments.  \n\nSo possible graphs:  \n1. B → C only.  \n2. A → B → C.  \n3. A → C and B → C.  \n\nBut A → C alone without B → C fails (perturb(B) gives C=0).  \nB → C is necessary.  \n\nWe must have at most 3 edges.  \n\nLet's test A → B and B → C:  \nPerturb(B): A=0 (A not downstream of B), B=0, C=1 (downstream of B) ✓  \nPerturb(C): A=0 (A not downstream of C), B=0, C=0 ✓  \n\nLet's test B → C and A → C:  \nPerturb(B): A=0, B=0, C=1 (since B → C) ✓  \nPerturb(C): A=0, B=0, C=0 ✓  \n\nLet's test B → C only:  \nPerturb(B): A=0, B=0, C=1 ✓  \nPerturb(C): A=0, B=0, C=0 ✓  \n\nAll three fit. But prior predictions: none. So any is fine.  \n\nChoose simplest: B → C only.  \n\nGraph: B->C",
+          "teacher_feedback": "Your proposed graph `B → C` correctly explains all observations:\n\n- **Perturb(B)**: C=1 means C is downstream of B ✓\n- **Perturb(C)**: All nodes=0 means no nodes are downstream of C ✓\n\nThe graph is parsimonious and consistent with the data. No additional edges are required since A is never 1 in any experiment, meaning A is not downstream of B or C.\n\n**Conclusion**: Your graph is correct and minimal. Well done.",
+          "student_refined": "Graph: B->C"
+        },
+        {
+          "query_index": 3,
+          "student_initial": "Graph: B->C",
+          "teacher_feedback": "Let's check the student's proposed graph `B → C` against the data.\n\n---\n\n**Perturb(B) → A:0 B:0 C:1**  \n- B=0 because it's perturbed.  \n- C=1 means C is downstream of B — consistent with `B → C`.  \n- A=0 means A is not downstream of B — consistent (no edge from B to A).\n\n---\n\n**Perturb(C) → A:0 B:0 C:0**  \n- C=0 because it's perturbed.  \n- B=0 means B is not downstream of C — consistent (no edge from C to B).  \n- A=0 means A is not downstream of C — consistent.\n\n---\n\nBoth observations are logically explained by `B → C`.  \nNo missing or extra edges are required given the data.\n\n**Feedback:**  \n✅ Your graph `B → C` is consistent with all observations. No changes needed.",
+          "student_refined": "Graph: B->C"
+        }
+      ],
+      "observation_set_id": "n2_025",
+      "n_observations": 2,
+      "n_ground_truths": 4,
+      "n_queries": 4,
+      "n_valid": 4,
+      "n_unique_valid": 1,
+      "n_unique_all": 1,
+      "n_recovered_gts": 1,
+      "parse_success_count": 4,
+      "parse_success_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 0.25,
+      "recovery_rate": 0.25,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "B",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "B",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "B",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "B",
+              "C"
+            ]
+          ]
+        }
+      ],
+      "valid_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "B",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "B",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "B",
+              "C"
+            ]
+          ]
+        },
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "B",
+              "C"
+            ]
+          ]
+        }
+      ],
+      "unique_graphs": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "B",
+              "C"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Graph: A->C",
+          "teacher_feedback": "Let's analyze the student's proposed graph `A→C` against the perturbation data.\n\n**Perturb(A) → A:0 B:0 C:1**  \n- A=0: perturbed node  \n- B=0: not downstream of A (consistent with no A→B edge)  \n- C=1: downstream of A (consistent with A→C)  \n✅ This experiment is consistent with the graph.\n\n**Perturb(B) → A:0 B:0 C:0**  \n- B=0: perturbed node  \n- A=0: not downstream of B (consistent with no B→A edge)  \n- C=0: not downstream of B (consistent with no B→C edge)  \n✅ This experiment is consistent with the graph.\n\n**Conclusion:** The student's graph `A→C` explains all observations correctly. No edits are needed.\n\n**Feedback:** Your graph `A→C` is correct and parsimonious. It fully explains both perturbation experiments. Well done!",
+          "student_refined": "Graph: A->C"
+        }
+      ],
+      "observation_set_id": "n2_009",
+      "n_observations": 2,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 1,
+      "n_unique_valid": 1,
+      "n_unique_all": 1,
+      "n_recovered_gts": 1,
+      "parse_success_count": 1,
+      "parse_success_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 1.0,
+      "recovery_rate": 1.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ]
+          ]
+        }
+      ],
+      "valid_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ]
+          ]
+        }
+      ],
+      "unique_graphs": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Graph: C->A",
+          "teacher_feedback": "Let's analyze the student's proposed graph `C → A` against the perturbation data.\n\n**Step-by-step reasoning:**\n\n1. **Perturb(A):**  \n   - A=0 (perturbed), B=0, C=1.  \n   - C=1 means C is downstream of A in the causal graph.  \n   - But in `C → A`, C is *not* downstream of A — A is downstream of C.  \n   - So this is **inconsistent** — C should be 0 if A is perturbed in `C → A`.\n\n2. **Perturb(B):**  \n   - A=0, B=0, C=0.  \n   - B has no effect on others, so B must have no outgoing edges.  \n   - Consistent with `C → A` (B is isolated).\n\n3. **Perturb(C):**  \n   - A=0, B=0, C=0.  \n   - In `C → A`, A is downstream of C, so perturbing C should make A=0 (matches).  \n   - C=0 matches (perturbed node).  \n   - Consistent.\n\n**Conclusion:**  \nThe graph `C → A` fails the first experiment: perturbing A gave C=1, meaning A must cause C, not the reverse.\n\n**Correction needed:**  \nReverse `C → A` to `A → C`.  \nAlso, B is isolated (no incoming/outgoing edges to A or C), which matches all data.\n\n**Final valid graph:**  \n```\nA → C\nB\n```",
+          "student_refined": "Graph: A->C"
+        }
+      ],
+      "observation_set_id": "n3_011",
+      "n_observations": 3,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 1,
+      "n_unique_valid": 1,
+      "n_unique_all": 1,
+      "n_recovered_gts": 1,
+      "parse_success_count": 1,
+      "parse_success_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 1.0,
+      "recovery_rate": 1.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ]
+          ]
+        }
+      ],
+      "valid_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ]
+          ]
+        }
+      ],
+      "unique_graphs": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "A",
+              "C"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Graph: A->B, A->C",
+          "teacher_feedback": "Let's analyze your proposed graph `A→B, A→C` against the perturbation data.\n\n**Perturb(B) → A:1 B:0 C:0**\n- In your graph, B is downstream of A, so perturbing B should NOT affect A (A is not downstream of B)\n- But the data shows perturbing B makes A=1, meaning A must be downstream of B\n- **Inconsistency**: Your graph says A→B, but data requires B→A\n\n**Perturb(C) → A:0 B:0 C:0**\n- In your graph, C is downstream of A, so perturbing C should NOT affect A (consistent with A:0)\n- C:0 is expected when perturbing C\n- B:0 is also consistent since B is not downstream of C\n\n**Required edit**: Reverse A→B to B→A\n\n**Corrected graph**: `B→A, A→C`\n\nThis explains:\n- Perturb(B): B=0, A=1 (downstream), C=1 (via A→C)\n- Wait, the data shows C=0 when perturbing B, but my corrected graph would give C=1. Let me reconsider...\n\nActually, the data shows C=0 when perturbing B, meaning C cannot be downstream of B. But if A→C and B→A, then C would be downstream of B. This is inconsistent.\n\n**Better solution**: `B→A` only (remove A→C)\n\nFinal graph: `B→A`\n- Perturb(B): B=0, A=1 (downstream), C=0 (not downstream) ✓\n- Perturb(C): C=0, A=0, B=0 (no downstream effects) ✓",
+          "student_refined": "Graph: B->A"
+        }
+      ],
+      "observation_set_id": "n2_026",
+      "n_observations": 2,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 1,
+      "n_unique_valid": 1,
+      "n_unique_all": 1,
+      "n_recovered_gts": 1,
+      "parse_success_count": 1,
+      "parse_success_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 1.0,
+      "recovery_rate": 1.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ]
+          ]
+        }
+      ],
+      "valid_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ]
+          ]
+        }
+      ],
+      "unique_graphs": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "B",
+              "A"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "teacher_feedbacks": [
+        {
+          "query_index": 0,
+          "student_initial": "Graph: B->C",
+          "teacher_feedback": "Let's check each experiment against the proposed graph `B → C`.\n\n**Experiment 1: Perturb(A) → A:0 B:0 C:0**  \n- Graph `B→C` has no edge from A, so perturbing A should not affect B or C.  \n- Observed: B=0, C=0 — matches expectation. ✅\n\n**Experiment 2: Perturb(B) → A:0 B:0 C:1**  \n- Perturbing B should make B=0 and C=1 (since C is downstream of B).  \n- Observed: C=1 — matches expectation. ✅\n\nBoth experiments are consistent with `B → C`. No edges need to be added or removed.\n\n**Conclusion:** The student's graph is correct and explains the data.",
+          "student_refined": "Graph: B->C"
+        }
+      ],
+      "observation_set_id": "n2_002",
+      "n_observations": 2,
+      "n_ground_truths": 1,
+      "n_queries": 1,
+      "n_valid": 1,
+      "n_unique_valid": 1,
+      "n_unique_all": 1,
+      "n_recovered_gts": 1,
+      "parse_success_count": 1,
+      "parse_success_rate": 1.0,
+      "valid_rate": 1.0,
+      "novelty_rate": 1.0,
+      "recovery_rate": 1.0,
+      "token_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost": 0.0,
+      "teacher_student": true,
+      "errors": [],
+      "error_summary": {
+        "total_errors": 0,
+        "error_types": {}
+      },
+      "all_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "B",
+              "C"
+            ]
+          ]
+        }
+      ],
+      "valid_hypotheses": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "B",
+              "C"
+            ]
+          ]
+        }
+      ],
+      "unique_graphs": [
+        {
+          "nodes": [
+            "A",
+            "B",
+            "C"
+          ],
+          "edges": [
+            [
+              "B",
+              "C"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "statistics": {
+    "parse_success_rate": {
+      "mean": 0.9916666666666667,
+      "std": 0.04487637339278752,
+      "var": 0.002013888888888888,
+      "min": 0.75,
+      "max": 1.0,
+      "p_value": 7.369018998620886e-41
+    },
+    "valid_rate": {
+      "mean": 0.8833333333333333,
+      "std": 0.2867441755680875,
+      "var": 0.08222222222222221,
+      "min": 0.0,
+      "max": 1.0,
+      "p_value": 1.2164508720174008e-16
+    },
+    "novelty_rate": {
+      "mean": 0.6705555555555556,
+      "std": 0.3562584198701766,
+      "var": 0.12692006172839504,
+      "min": 0.08333333333333333,
+      "max": 1.0,
+      "p_value": 2.4264656060221635e-11
+    },
+    "recovery_rate": {
+      "mean": 0.5788888888888889,
+      "std": 0.389703907861429,
+      "var": 0.15186913580246914,
+      "min": 0.0,
+      "max": 1.0,
+      "p_value": 4.011993357843791e-09
+    }
+  }
+}
